@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="row">
+    <kn-section #leftSection
+                [hidden]="rightSection.isExpanded">
+      Left Section
+    </kn-section>
+    <kn-section #rightSection
+                [hidden]="leftSection.isExpanded">
+      Right Section
+    </kn-section>
+  </div>
+</div>

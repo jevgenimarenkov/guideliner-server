@@ -1,0 +1,39 @@
+<div class="panel">
+  <div class="panel-body">
+
+    <div class="btn-group">
+      <label *ngFor="let category of categories" class="btn btn-primary" [(ngModel)]="selectedCategory" btnRadio="{{category}}" (click)="showCategories(category)"
+             uncheckable>{{category}}
+      </label>
+    </div>
+
+    <hr/>
+
+    <div class="input-group">
+      <input type="text"  class="form-control"  placeholder="URL to evaluate" id="webURL" required [(ngModel)]="webURL" name="webURL">
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-primary active" (click)="performEvaluation()">Evaluate User Interface</button>
+      </span>
+    </div>
+
+    <hr/>
+
+    <div *ngFor="let guideline of guidelines;">
+      <div class="panel panel-info">
+        <accordion>
+          <accordion-group #group [isOpen]="false" panelClass = "panel-info">
+            <div accordion-heading>
+              {{guideline.name}}
+              <span class="label label-default">{{guideline.code}}</span>
+              <i class="pull-right glyphicon"
+                 [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+            </div>
+            <p>{{guideline.description}}</p>
+          </accordion-group>
+        </accordion>
+      </div>
+    </div>
+
+
+  </div>
+</div>

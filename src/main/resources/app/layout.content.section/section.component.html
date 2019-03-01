@@ -1,0 +1,10 @@
+<div class="section"
+[ngClass]="{'col-lg-6': !isExpanded, 'col-lg-12': isExpanded}">
+    <span (click)="isExpanded = !isExpanded"
+    [ngClass]="{'glyphicon-resize-full': !isExpanded, 'glyphicon-resize-small': isExpanded}"
+    aria-hidden="true" class="glyphicon pull-right section-menu">
+    </span>
+    <tabset>
+    <div #tabsContainer></div>
+    </tabset>
+</div>

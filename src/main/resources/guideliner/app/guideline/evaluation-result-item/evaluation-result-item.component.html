@@ -1,0 +1,49 @@
+<div [class]="getClassForPanel(result.result)">
+  <div class="panel-heading">
+    <span class="label label-default">{{result.guidelineCode}}</span>
+    {{result.description}}
+  </div>
+  <div class="panel-body">
+    <p>{{result.guidelineDescription}}</p>
+    <span [class]="getClassForLabel(result.result)">{{result.result}}</span>
+    <div  *ngIf="result.result == 'FAIL'" class="alert alert-warning" role="alert">
+      Test failed.
+      <a href="#" class="alert-link" (click)="showChildModal(result)">Open failure report.</a>
+    </div>
+  </div>
+</div>
+
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="hideChildModal()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">{{result.guidelineName}}</h4>
+      </div>
+      <div class="modal-body">
+        {{result.guidelineDescription}}
+        <!-- Table -->
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Element type</th>
+            <th>Element text</th>
+            <th>Explanation of vioalation</th>
+            <th>Element image</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let failedElement of result.failedElements;">
+            <td>{{failedElement.type}}</td>
+            <td>{{failedElement.text}}</td>
+            <td>{{failedElement.description}}</td>
+            <td><img *ngIf="failedElement.pathToElement != 'NONE'" src="http://localhost:8080/downloadImage?name={{failedElement.pathToElement}}" class="img-rounded"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

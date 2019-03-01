@@ -17,12 +17,12 @@ public class SampleUsabilityTest2 extends AbstractUsabilityTest {
             this.testContextManager = new TestContextManager(getClass());
             this.testContextManager.prepareTestInstance(this);
         }
-        ontologyEvaluatorService.initialiseDriverIfNotInitialised(URL);
+//        ontologyEvaluatorService.initialiseDriverIfNotInitialised(URL);
     }
 
     @After
     public void tearDown() throws Exception {
-        ontologyEvaluatorService.closeDriver();
+        ontologyEvaluatorService.closeDriver(driver);
     }
     @DataProvider
     public static Object[][] usabilityGuidelinesTest() {
@@ -43,7 +43,7 @@ public class SampleUsabilityTest2 extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, null, false);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, null, driver);
 
         //then
         assertEvaluationResult(result);

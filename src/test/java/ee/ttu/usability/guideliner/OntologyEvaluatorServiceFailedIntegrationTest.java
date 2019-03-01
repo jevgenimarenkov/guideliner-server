@@ -35,19 +35,19 @@ public class OntologyEvaluatorServiceFailedIntegrationTest extends OntologyEvalu
     }
 
 
-    @Test
-    public void test10_11_UseAppropriateTextLinkLengths() {
-        // given
-        String guideline = "10-11_UseAppropriateTextLinkLengths";
-
-        // when
-        EvaluationResult evaluationResult = ontologyEvaluatorService.evaluateByName(guideline, URL);
-
-        // then
-        Assert.assertEquals(ResultType.FAIL, evaluationResult.getResult());
-        Assert.assertEquals(1, evaluationResult.getFailedElements().size());
-        Assert.assertEquals(ElementType.LINK.name(), evaluationResult.getFailedElements().get(0).getType());
-        Assert.assertEquals("Amount of WORD was 36", evaluationResult.getFailedElements().get(0).getDescription());
-    }
+//    @Test
+//    public void test10_11_UseAppropriateTextLinkLengths() {
+//        // given
+//        String guideline = "10-11_UseAppropriateTextLinkLengths";
+//
+//        // when
+//        EvaluationResult evaluationResult = ontologyEvaluatorService.evaluateByName(guideline, URL);
+//
+//        // then
+//        Assert.assertEquals(ResultType.FAIL, evaluationResult.getResult());
+//        Assert.assertEquals(1, evaluationResult.getFailedElements().size());
+//        Assert.assertEquals(ElementType.LINK.name(), evaluationResult.getFailedElements().get(0).getType());
+//        Assert.assertEquals("Amount of WORD was 36", evaluationResult.getFailedElements().get(0).getDescription());
+//    }
 
 }

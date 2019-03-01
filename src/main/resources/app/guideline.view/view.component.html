@@ -1,0 +1,31 @@
+<div class="panel">
+  <div class="panel-body">
+    <fieldset>
+      <legend>
+        <h3>Usability guidelines</h3>
+      </legend>
+    </fieldset>
+    <form>
+      <div *ngFor="let guideline of guidelines;">
+        <div class="panel panel-info">
+          <accordion>
+            <accordion-group #group [isOpen]="false" panelClass = "panel-info">
+              <div accordion-heading>
+                {{guideline.name}}
+                <span class="label label-default">{{guideline.code}}</span>
+                <i class="pull-right glyphicon"
+                   [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+              </div>
+              <p>{{guideline.description}}</p>
+            </accordion-group>
+          </accordion>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="webURL">Web application URL</label>
+        <input type="text"  class="form-control" id="webURL" required [(ngModel)]="webURL" name="webURL">
+      </div>
+      <button type="button" class="btn btn-primary active" (click)="performEvaluation()">Evaluate User Interface</button>
+    </form>
+  </div>
+</div>

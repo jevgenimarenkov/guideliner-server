@@ -22,7 +22,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
 
     @After
     public void tearDown() throws Exception {
-        ontologyEvaluatorService.closeDriver();
+        ontologyEvaluatorService.closeDriver(driver);
     }
     
     @DataProvider
@@ -57,7 +57,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://www.delfi.ee", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://www.delfi.ee", driver);
 
         //then
         assertEvaluationResult(result);
@@ -71,7 +71,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.nasa.gov/", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.nasa.gov/", driver);
 
         //then
         assertEvaluationResult(result);
@@ -85,7 +85,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://edition.cnn.com/", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://edition.cnn.com/", driver);
 
         //then
         assertEvaluationResult(result);
@@ -99,7 +99,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.bbc.co.uk/", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.bbc.co.uk/", driver);
 
         //then
         assertEvaluationResult(result);
@@ -113,7 +113,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://www.itk.ee/en", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://www.itk.ee/en", driver);
 
         //then
         assertEvaluationResult(result);
@@ -127,7 +127,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://www.rkas.ee/en", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "http://www.rkas.ee/en", driver);
 
         //then
         assertEvaluationResult(result);
@@ -141,7 +141,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.eesti.ee/en/", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.eesti.ee/en/", driver);
 
         //then
         assertEvaluationResult(result);
@@ -155,7 +155,7 @@ public class SampleUsabilityTest extends AbstractUsabilityTest {
                 .loadClass(guidelines);
 
         // when
-        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.mnt.ee/eng", true);
+        EvaluationResult result = ontologyEvaluatorService.evaluate(guideline, "https://www.mnt.ee/eng", driver);
 
         //then
         assertEvaluationResult(result);

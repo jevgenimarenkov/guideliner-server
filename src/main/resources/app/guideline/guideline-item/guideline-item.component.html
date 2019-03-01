@@ -1,0 +1,13 @@
+<div class="panel panel-info">
+  <accordion>
+    <accordion-group #group [isOpen]="false" panelClass = "panel-info">
+      <div accordion-heading>
+        {{guideline.name}}
+        <span class="label label-default">{{guideline.code}}</span>
+        <i class="pull-right glyphicon"
+           [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+      </div>
+      <p>{{guideline.description}}</p>
+    </accordion-group>
+  </accordion>
+</div>

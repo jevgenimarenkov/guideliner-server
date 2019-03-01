@@ -1,0 +1,9 @@
+"use strict";
+var CategoryEvaluation = (function () {
+    function CategoryEvaluation() {
+    }
+    return CategoryEvaluation;
+}());
+exports.CategoryEvaluation = CategoryEvaluation;
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvZXZhbHVhdGlvbi5kdG8udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0lBQUE7SUFLQSxDQUFDO0lBQUQseUJBQUM7QUFBRCxDQUxBLEFBS0MsSUFBQTtBQUxZLDBCQUFrQixxQkFLOUIsQ0FBQSIsImZpbGUiOiJhcHAvc2hhcmVkL2V2YWx1YXRpb24uZHRvLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIENhdGVnb3J5RXZhbHVhdGlvbiB7XHJcblxyXG4gIHB1YmxpYyB1cmw6U3RyaW5nO1xyXG4gIHB1YmxpYyBjYXRlZ29yeTpTdHJpbmc7XHJcblxyXG59XHJcbiJdfQ==

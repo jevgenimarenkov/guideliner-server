@@ -1,0 +1,88 @@
+<div class="panel">
+  <div class="panel-body">
+    <fieldset>
+      <legend>
+        <h3>Usability guidelines</h3>
+      </legend>
+    </fieldset>
+    <bs-progress>
+      <bar *ngFor="let s of summary" [value]="s?.value" [type]="s?.type">
+        <span>{{s?.value}}%</span>
+      </bar>
+    </bs-progress>
+    <hr/>
+    <form>
+      <div *ngFor="let result of results;">
+        <div class="panel panel-info">
+          <accordion>
+            <accordion-group #group [isOpen]="false" [panelClass] = "getClassForPanel(result.result)">
+              <div accordion-heading>
+                {{result.guideline.name}}
+                <span class="label label-default">{{result.guideline.code}}</span>
+                <i class="pull-right glyphicon"
+                   [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+              </div>
+              <p>{{result.guideline.description}}</p>
+              <span [class]="getClassForLabel(result.result)">{{result.result}}</span>
+              <div  *ngIf="result.result == 'FAIL'" class="alert alert-warning" role="alert">
+                Test failed.
+                <a href="#" class="alert-link" (click)="showChildModal($event, result)">Open failure report.</a>
+              </div>
+            </accordion-group>
+          </accordion>
+        </div>
+
+        <!--<div [class]="getClassForPanel(result.result)">-->
+        <!--<div class="panel-heading">-->
+        <!--<span class="label label-default">{{result.guideline.code}}</span>-->
+        <!--{{result.guideline.name}}-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+        <!--<p>{{result.guideline.description}}</p>-->
+        <!--<span [class]="getClassForLabel(result.result)">{{result.result}}</span>-->
+        <!--<div  *ngIf="result.result == 'FAIL'" class="alert alert-warning" role="alert">-->
+        <!--Test failed.-->
+        <!--<a href="#" class="alert-link" (click)="showChildModal(result)">Open failure report.</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+      </div>
+    </form>
+
+    <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" (click)="hideChildModal()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">{{activeResult.guideline.name}}</h4>
+          </div>
+          <div class="modal-body">
+            {{activeResult.guideline.description}}
+            <!-- Table -->
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Element type</th>
+                <th>Element text</th>
+                <th>Explanation of vioalation</th>
+                <th>Element image</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let result of activeResult.failedElements;">
+                <td>{{result.type}}</td>
+                <td>{{result.text}}</td>
+                <td>{{result.description}}</td>
+                <td><img *ngIf="result.pathToElement != 'NONE'" src="http://localhost:8080/downloadImage?name={{result.pathToElement}}" class="img-rounded"></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -3,7 +3,9 @@ package jenkins;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestContextManager;
@@ -33,6 +35,15 @@ public class AbstractUsabilityTest {
     @Autowired
     protected OntologyRepository ontologyRepository;
 
+    WebDriver driver;
+    @Before
+    public void configureDriver() throws Exception {
+        if (this.testContextManager == null) {
+            this.testContextManager = new TestContextManager(getClass());
+            this.testContextManager.prepareTestInstance(this);
+        }
+        driver = ontologyEvaluatorService.initialiseDriverIfNotInitialised(URL, driver);
+    }
 
     protected void assertEvaluationResult(EvaluationResult result) {
         Assert.assertEquals(null, verifyEvaluationResults(result));

@@ -456,6 +456,7 @@ public class OntologyEvaluatorService {
 //		return driver;
 	}
 
+
 	public void closeDriver(WebDriver driver) {
 		if (driver != null) {
 		//	driver.close();

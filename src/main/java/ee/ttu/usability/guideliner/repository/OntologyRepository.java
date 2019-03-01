@@ -42,8 +42,8 @@ public class OntologyRepository {
 
 	//TODO move to file or give as a parameter
 //	private static String ontologyFile = "C:\\Users\\jevge\\university\\ontology\\project\\protege-ontology\\usability-guidelines-ontology_v1.1.owl";
-	private static String ontologyFile = "..\\protege-ontology\\usability-guidelines-ontology_v1.1.owl";
-//	public static String ontologyFile = "classpath:usability-guidelines-ontology_v1.1.owl";
+//	private static String ontologyFile = "..\\protege-ontology\\usability-guidelines-ontology_v1.1.owl";
+	public static String ontologyFile = "classpath:usability-guidelines-ontology_v1.1.owl";
 
 	//private static String ontologyFile = "C:\\Users\\jevge\\university\\ontology\\project\\protege-ontology\\usability-guidelines-ontology_v1.1.owl";
 	//private static String ontologyFile2 = "C:\\Users\\jevge\\university\\ontology\\files\\conference\\usability-guidelines-ontology_v1.1.owl";
@@ -71,13 +71,13 @@ public class OntologyRepository {
 //			System.out.println(resourceLoader);
 //			System.out.println(resourceLoader.getResource(ontologyFile));
 //			System.out.println();
-//			ontology = ontologyManager.loadOntologyFromOntologyDocument(resourceLoader.getResource(ontologyFile).getInputStream());
-			ontology = ontologyManager.loadOntologyFromOntologyDocument(new File(ontologyFile));
+			ontology = ontologyManager.loadOntologyFromOntologyDocument(resourceLoader.getResource(ontologyFile).getInputStream());
+//			ontology = ontologyManager.loadOntologyFromOntologyDocument(new File(ontologyFile));
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public void initialiseReasoner() {
         OWLReasonerFactory reasonerFactory = new JFactFactory();
         ConsoleProgressMonitor progressMonitor = new ConsoleProgressMonitor();

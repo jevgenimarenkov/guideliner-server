@@ -4,9 +4,12 @@ import ee.ttu.usability.guideliner.service.impl.OntologyEvaluatorService;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.TestContextManager;
 
 @Ignore
 public class OntologyEvaluatorServiceSuccessIntegrationTest extends OntologyEvaluatorServiceAbstractIntegrationTest {
@@ -16,13 +19,19 @@ public class OntologyEvaluatorServiceSuccessIntegrationTest extends OntologyEval
     @Autowired
     private OntologyEvaluatorService ontologyEvaluatorService;
 
+    WebDriver driver;
+    @Before
+    public void configureDriver() throws Exception {
+        driver = ontologyEvaluatorService.initialiseDriverIfNotInitialised(URL, driver);
+    }
+
     @Test
     public void test10_11_UseAppropriateTextLinkLengths() {
         // given
         String guideline = "10-11_UseAppropriateTextLinkLengths";
         
         // when
-        EvaluationResult evaluationResult = ontologyEvaluatorService.evaluateByName(guideline, URL);
+        EvaluationResult evaluationResult = ontologyEvaluatorService.evaluateByName(guideline, URL, driver);
 
         // then
         Assert.assertEquals(ResultType.SUCCESS, evaluationResult.getResult());
@@ -35,7 +44,7 @@ public class OntologyEvaluatorServiceSuccessIntegrationTest extends OntologyEval
         String guideline = "14-09_LimitTheUseOfImages";
 
         // when
-        EvaluationResult evaluationResult = ontologyEvaluatorService.evaluateByName(guideline, "https://www.etis.ee/");
+        EvaluationResult evaluationResult = ontologyEvaluatorService.evaluateByName(guideline, "https://www.etis.ee/", driver);
 
         // then
         System.out.println(evaluationResult.toString());

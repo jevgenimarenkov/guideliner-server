@@ -1,0 +1,8 @@
+.section-menu {
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.section:hover .section-menu {
+	visibility: visible;
+}

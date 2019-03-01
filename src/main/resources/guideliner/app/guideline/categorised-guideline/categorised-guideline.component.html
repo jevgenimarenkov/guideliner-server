@@ -1,0 +1,27 @@
+<div class="panel">
+  <div class="panel-body">
+
+    <div class="btn-group">
+      <label *ngFor="let category of categories" class="btn btn-primary" [(ngModel)]="selectedCategory" btnRadio="{{category}}" (click)="showCategories(category)"
+             uncheckable>{{category}}
+      </label>
+    </div>
+
+    <hr/>
+
+    <div class="input-group">
+      <input type="text"  class="form-control"  placeholder="URL to evaluate" id="webURL" required [(ngModel)]="webURL" name="webURL">
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-primary active" (click)="performEvaluation()">Evaluate User Interface</button>
+      </span>
+    </div>
+
+    <hr/>
+
+    <div *ngFor="let guideline of guidelines;">
+      <guideline-item [guideline]="guideline"></guideline-item>
+    </div>
+
+
+  </div>
+</div>

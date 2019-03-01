@@ -1,0 +1,43 @@
+<div class="panel">
+  <div class="panel-body">
+    <div [ngSwitch]="loading">
+      <div *ngSwitchCase="true">
+        <loading-indicator></loading-indicator>
+      </div>
+      <div *ngSwitchCase="false">
+        <bs-progress>
+          <bar *ngFor="let s of summary" [value]="s?.value" [type]="s?.type">
+            <span>{{ s?.value | number : '1.0-0'}} % </span>
+          </bar>
+        </bs-progress>
+        <hr/>
+        <hr/>
+        <!--
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Code</th>
+            <th>Guideline</th>
+            <th>Amount of failed element</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let result of results;">
+              <td>{{result.guidelineCode}}</td>
+              <td>{{result.result}}</td>
+              <td>{{result.failedElements.length}}</td>
+            </tr>
+          </tbody>
+        </table>
+        -->
+        <hr/>
+        <hr/>
+        <form>
+          <div *ngFor="let result of results;">
+            <evaluation-result-item [result]="result"></evaluation-result-item>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -50,9 +50,6 @@ public class Screenshoter {
 
 
 	public File takeScreenshot(BufferedImage screenshot, WebElement element, WebDriver driver) {
-		if (true) {
-			return null;
-		}
 		try {
 			LocalDateTime startTime = LocalDateTime.now();
 			BufferedImage dest = takeScreenshotAsImage(screenshot, element, driver);

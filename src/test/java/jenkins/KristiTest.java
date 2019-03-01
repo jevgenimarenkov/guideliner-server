@@ -22,7 +22,7 @@ public class KristiTest extends AbstractUsabilityTest {
             this.testContextManager = new TestContextManager(getClass());
             this.testContextManager.prepareTestInstance(this);
         }
-        driver = ontologyEvaluatorService.initialiseDriverIfNotInitialised(URL);
+        driver = ontologyEvaluatorService.initialiseDriverIfNotInitialised(URL, driver);
     }
 
     @Test
