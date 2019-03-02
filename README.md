@@ -14,21 +14,11 @@ Download the `.jar` file [here](/artifact/guideliner.jar). It includes all depen
   - Allows writing usability unit tests
   - Contains more than 100 predefined usability tests for mobile and desktop applications
   - Provides REST API for usability evaluation
+  
+# Development
 
-### Running as standalone server 
-
-Guideliner requires [JDK 1.8 +] to run.
-
-Install and start the server.
-
-```sh
+Check out the code. Install and start the server.
+```
 $ mvn install
-$ java -jar guideliner-server.jar
+$ mnv spring-boot:run
 ```
-### Running as unittest
-
-```sh
-mvn test -Durl=https://www.example.com
-```
-
--Durl parameter can contain any URL that you would like to verify
