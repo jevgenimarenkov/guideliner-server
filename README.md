@@ -12,7 +12,7 @@ Download the `.jar` file [here](/artifact/guideliner.jar). It includes all depen
 # Features
 
   - Allows writing usability unit tests
-  - Contains more than 100 predefined usability tests for mobile and desktop applications
+  - Contains 98 predefined usability tests for mobile and desktop applications
   - Provides REST API for usability evaluation
   
 # Development
