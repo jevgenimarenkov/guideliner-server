@@ -4,6 +4,11 @@ Guideliner is a tool for automatic usability evaluation.
 
 # Installing
 Download the `.jar` file [here](/artifact/guideliner.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 8 and Mozilla Firefox installed.
+
+# Usage
+ - Execute command `java -jar guideliner.jar` in the downloaded directory. 
+ - Redirect to http://localhost:8080/guidelines/index.html
+
 # Features
 
   - Allows writing usability unit tests
