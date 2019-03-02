@@ -1,4 +1,4 @@
-# Guideliner ![Optional Text](/src/main/resources/assets/guideliner.JPG)
+# ![Optional Text](/src/main/resources/assets/guideliner.JPG)
 
 Guideliner is a tool for automatic usability evaluation.
 
