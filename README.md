@@ -1,6 +1,4 @@
-<p align="center">
 # ![Optional Text](/src/main/resources/assets/guideliner.JPG)
-</p>
 Guideliner is an open source Web-based tool for automated evaluation of WUI conformance to usability guidelines. It concentrates on automatically evaluating of HTML-centric accessibility guidelines and guidelines covering visual characteristics of WUI. 
 
 Guideliner provides possibility to perform usability pre-release and implementation-time testing verifying that all developed features are compliant with usability guidelines. In general, Guideliner increases the overall quality of WUI as it performs the evaluation of HTML-specific usability guidelines as well as guidelines checking the visual characteristics of WUI. Applicability of the Guideliner does not stick to any particular WUI development process (e.g., agile or waterfall) but rather it is a universal tool challenging a problem of immediate usability evaluation, especially during WUI development and implementation phases <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-3">[3]</a>.
