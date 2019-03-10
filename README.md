@@ -58,3 +58,6 @@ Check out the code. Install and start the server.
 $ mvn install
 $ mnv spring-boot:run
 ```
+# Remarks
+
+This package is provided as is. Use at own risk.
