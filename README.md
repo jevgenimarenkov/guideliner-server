@@ -45,8 +45,8 @@ If you find this application useful, please cite the following paper:
   - Allows writing usability unit tests
   - Contains usability ontology
   <p align="center">
-    <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="700"></a>
-    <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="700"></a>
+    <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="500"></a>
+    <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="500"></a>
  </p>
  
 # Installing
