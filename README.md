@@ -4,6 +4,7 @@ Guideliner is an open source tool for automated evaluation of WUI conformance to
 
 # Publications
 If you find this application useful, please cite the following paper:
+
 [1] Marenkov, J., Robal, T., & Kalja, A.: Design-Time Web Usability Evaluation with Guideliner. Complex Systems Informatics and Modeling Quarterly, (15), 90-109. (2018)
 ```
 @article{marenkov2018design,
