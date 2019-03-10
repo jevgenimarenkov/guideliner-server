@@ -39,9 +39,11 @@ If you find this application useful, please cite the following paper:
 }
 ```
 # Features
+  - Contains 55 accessibility guidelines, 23 common usability guidelines suitable for desktop and mobile devices and 20 usability guidelines suitable only for mobile devices
+  - Provides REST API for automated usability evaluation
+  - Guideliner can be used within a development IDE for automated usability evaluation during the implementation phase of WUI development
   - Allows writing usability unit tests
-  - Contains 98 predefined usability tests for mobile and desktop applications
-  - Provides REST API for usability evaluation
+  - Contains usability ontology
   
 # Installing
 Download the `.jar` file [here](/artifact/guideliner.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 8 and Mozilla Firefox installed.
