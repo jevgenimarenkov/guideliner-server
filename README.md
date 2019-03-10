@@ -38,18 +38,17 @@ If you find this application useful, please cite the following paper:
   organization={Springer}
 }
 ```
+# Features
+  - Allows writing usability unit tests
+  - Contains 98 predefined usability tests for mobile and desktop applications
+  - Provides REST API for usability evaluation
+  
 # Installing
 Download the `.jar` file [here](/artifact/guideliner.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 8 and Mozilla Firefox installed.
 
 # Usage
  - Execute command `java -jar guideliner.jar` in the downloaded directory. 
  - Redirect to http://localhost:8080/guidelines/index.html
-
-# Features
-
-  - Allows writing usability unit tests
-  - Contains 98 predefined usability tests for mobile and desktop applications
-  - Provides REST API for usability evaluation
   
 # Development
 
