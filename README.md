@@ -1,9 +1,9 @@
 # ![Optional Text](/src/main/resources/assets/guideliner.JPG)
-Guideliner is an open source Web-based tool for automated evaluation of WUI conformance to usability guidelines. It concentrates on automatically evaluating of HTML-centric accessibility guidelines and guidelines covering visual characteristics of WUI. 
+Guideliner is an open source Web-based tool for automated evaluation of Web User Interface (WUI) conformance to usability guidelines. It concentrates on automatically evaluating HTML-centric accessibility guidelines and guidelines covering visual characteristics of WUI. 
 
-Guideliner provides possibility to perform usability pre-release and implementation-time testing verifying that all developed features are compliant with usability guidelines. In general, Guideliner increases the overall quality of WUI as it performs the evaluation of HTML-specific usability guidelines as well as guidelines checking the visual characteristics of WUI. Applicability of the Guideliner does not stick to any particular WUI development process (e.g., agile or waterfall) but rather it is a universal tool challenging a problem of immediate usability evaluation, especially during WUI development and implementation phases <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-3">[3]</a>.
+Guideliner provides a possibility to perform pre-release and implementation-time usability testing verifying that all developed features are compliant with usability guidelines. In general, Guideliner increases the overall quality of WUI as it performs the evaluation of WUI conformance to HTML-specific usability guidelines as well as guidelines checking the visual characteristics of WUI. Applicability of the Guideliner does not stick to any particular WUI development process (e.g., agile or waterfall) but rather is a universal tool challenging a problem of immediate usability evaluation, especially during WUI development and implementation phases <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-3">[3]</a>.
 
-The Guideliner has been established in cooperation between Tallinn University of Technology (TTÜ).
+The Guideliner has been established as an outcome of research conducted in Tallinn University of Technology (TTÜ).
 
 # Publications
 If you find this application useful, please cite the following paper:
@@ -16,19 +16,32 @@ If you find this application useful, please cite the following paper:
   journal={Complex Systems Informatics and Modeling Quarterly},
   number={15},
   pages={90--109},
-  year={2018}
+  month = {jul},
+  year={2018},
+  doi = {10.7250/csimq.2018-15.05},
+  url = {https://doi.org/10.7250/csimq.2018-15.05}
 }
 ```
 <a name="ref-2">[2] Marenkov, J., Robal, T., Kalja, A.: Guideliner: A Tool to Improve Web UI Development for Better Usability. In: Proceedings of the 8th International Conference on Web Intelligence, Mining and Semantics (WIMS '18), Article 17, 9 pages. ACM, New York (2018) 
 ```
 @inproceedings{marenkov2018guideliner,
-  title={Guideliner: a Tool to Improve Web UI Development for Better Usability},
-  author={Marenkov, Jevgeni and Robal, Tarmo and Kalja, Ahto},
-  booktitle={Proceedings of the 8th International Conference on Web Intelligence, Mining and Semantics},
-  pages={17},
-  year={2018},
-  organization={ACM}
-}
+ author = {Marenkov, Jevgeni and Robal, Tarmo and Kalja, Ahto},
+ title = {Guideliner: A Tool to Improve Web UI Development for Better Usability},
+ booktitle = {Proceedings of the 8th International Conference on Web Intelligence, Mining and Semantics},
+ series = {WIMS '18},
+ year = {2018},
+ isbn = {978-1-4503-5489-9},
+ location = {Novi Sad, Serbia},
+ pages = {17:1--17:9},
+ articleno = {17},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/3227609.3227667},
+ doi = {10.1145/3227609.3227667},
+ acmid = {3227667},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Web usability evaluation, usability guidelines, web user interface},
+} 
 ```
 <a name="ref-3">[3] Marenkov, J., Robal, T., Kalja, A.: A Tool for Design-Time Usability Evaluation of Web User Interfaces. In: Proceedings of Advances in Databases and Information Systems, pp 394-407. Springer, Cham (2017)
 ```
@@ -38,15 +51,32 @@ If you find this application useful, please cite the following paper:
   booktitle={European Conference on Advances in Databases and Information Systems},
   pages={394--407},
   year={2017},
-  organization={Springer}
+  organization={Springer},
+  publisher = {Springer International Publishing},
+  doi = {10.1007/978-3-319-66917-5_26},
+  url = {https://doi.org/10.1007/978-3-319-66917-5_26}
+}
+```
+<a name="ref-4">[4] Robal, T., Marenkov, J. & Kalja, A.: Ontology design for automatic evaluation of web user interface usability. PICMET ‘17: Proceedings, Technology Managemen for Interconnected World: July 9 - 13, 2017, Portland, Oregon, USA. Editors: Kocaoglu, PICMET, USA (2017)
+```
+@inproceedings{Robal2017,
+  title = {Ontology Design for Automatic Evaluation of Web User Interface Usability},
+  author = {Robal, Tarmo and Marenkov, Jevgeni and Kalja, Ahto},
+  pages={1-8}, 
+  year  = {2017},
+  month = {jul},
+  publisher = {{IEEE}},
+  booktitle = {2017 Portland International Conference on Management of Engineering and Technology ({PICMET})},
+  doi = {10.23919/picmet.2017.8125425},
+  url = {https://doi.org/10.23919/picmet.2017.8125425},
+  keywords={human computer interaction; ontologies (artificial intelligence); user interfaces; ontology design; web user interface automatic evaluation; web usability; UI evaluation; Usability; Guidelines;}, 
 }
 ```
 # Features
-  - Contains 55 accessibility guidelines, 23 common usability guidelines suitable for desktop and mobile devices and 20 usability guidelines suitable only for mobile devices
-  - Provides REST API for automated usability evaluation
-  - Guideliner can be used within a development IDE for automated usability evaluation during the implementation phase of WUI development
-  - Allows writing usability unit tests
-  - Contains usability ontology
+  - Contains 55 accessibility guidelines, 23 common usabil  ity guidelines suitable for desktop and mobile devices and 20 usability guidelines suitable only for mobile devices.  The primay sources of guidelines are recommendations in scientific publications, WCAG and Section 508 guidelines, Research-Based Web Design and Usability Guidelines from U.S. Dept. of Health and Human Services, and supplemented with recommendations from the Nielsen Norman Group. All guidelines are stored in designed usability ontology.
+  - Provides REST API for automated usability evaluation. REST API contins operations for retrieving defined usabiltiy guidelines and triggering the evaluation process.
+  - Guideliner can be used within a development IDE (e.g. Eclipse, IntelliJ IDEA) for automated usability evaluation during the implementation phase of WUI development.
+  - Allows triggering automated usability tests as unit tests.
   <p align="center">
     <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
     <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
