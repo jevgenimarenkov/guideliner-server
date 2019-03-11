@@ -78,7 +78,7 @@ If you find this application useful, please cite the following paper:
   - Guideliner can be used within a development IDE (e.g. Eclipse, IntelliJ IDEA) for automated usability evaluation during the implementation phase of WUI development.
   - Allows triggering automated usability tests as unit tests.
   <p align="center">
-    <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
+    <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400">Image</a>
     <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
  </p>
  
