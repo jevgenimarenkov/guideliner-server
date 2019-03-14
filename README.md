@@ -78,8 +78,8 @@ If you find this application useful, please cite the following paper:
   - Guideliner can be used within a development IDE (e.g. Eclipse, IntelliJ IDEA) for automated usability evaluation during the implementation phase of WUI development.
   - Allows triggering automated usability tests as unit tests.
 
-| |  | |
-| :---: |:---:| :---:|
+| |  |
+| :---: |:---:|
 | [![FVCproductions](/src/main/resources/assets/usability_results.PNG)](http://fvcproductions.com)    | [![FVCproductions](/src/main/resources/assets/usability_guidelines.PNG)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
 | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
 
