@@ -79,7 +79,6 @@ If you find this application useful, please cite the following paper:
   - Allows triggering automated usability tests as unit tests.
 
 |||
-| :---: |:---:|
 | [![FVCproductions](/src/main/resources/assets/usability_results.PNG)](http://fvcproductions.com)    | [![FVCproductions](/src/main/resources/assets/usability_guidelines.PNG)](http://fvcproductions.com) |
 | Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result. | Screenshot of the Guideliner User Interface. |
 
