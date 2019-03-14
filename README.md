@@ -80,12 +80,13 @@ If you find this application useful, please cite the following paper:
 <table border="0">
  <tr>
     <td>Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result.
-       <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400" title="Optional title" ></a>
    </td>
-    <td>Screenshot of the Guideliner User Interface.     <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a></td>
+    <td>Screenshot of the Guideliner User Interface.</td>
  </tr>
 </table>  
   <p align="center">
+           <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400" title="Optional title" ></a>
+    <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
  </p>
  
 # Installing
