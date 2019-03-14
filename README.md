@@ -83,7 +83,16 @@ If you find this application useful, please cite the following paper:
    </td>
     <td>Screenshot of the Guideliner User Interface.</td>
  </tr>
-</table>  
+</table> 
+  
+
+| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
+| :---: |:---:| :---:|
+| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
+| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
+  
+  
+  
   <p align="center">
            <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400" title="Optional title" ></a>
     <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
