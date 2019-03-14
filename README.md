@@ -85,11 +85,12 @@ If you find this application useful, please cite the following paper:
  </tr>
 </table>  
   <p align="center">
-           <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400" title="Optional title" ></a><center>Figure 1: IntelliEye's high-level architecture.</center>
+           <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400" title="Optional title" ></a>
     <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
-    <center>Figure 1: IntelliEye's high-level architecture.</center>
+   
  </p>
- 
+ <center>Figure 1: IntelliEye's high-level architecture.</center>
+  <center>Figure 1: IntelliEye's high-level architecture.</center>
 # Installing
 Download the `.jar` file [here](/artifact/guideliner.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 8 and Mozilla Firefox installed.
 
