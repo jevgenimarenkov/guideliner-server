@@ -80,10 +80,9 @@ If you find this application useful, please cite the following paper:
 
 | |  |
 | :---: |:---:|
-
 | [![FVCproductions](/src/main/resources/assets/usability_results.PNG)](http://fvcproductions.com)    | [![FVCproductions](/src/main/resources/assets/usability_guidelines.PNG)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-
 | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
+
 
 # Installing
 Download the `.jar` file [here](/artifact/guideliner.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 8 and Mozilla Firefox installed.
