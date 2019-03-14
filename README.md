@@ -79,7 +79,7 @@ If you find this application useful, please cite the following paper:
   - Allows triggering automated usability tests as unit tests.
 <table border="0">
  <tr border="0">
-    <td border="0">Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result.
+    <td border="0">
    </td>
     <td></td>
  </tr>
