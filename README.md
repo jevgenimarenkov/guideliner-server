@@ -77,8 +77,12 @@ If you find this application useful, please cite the following paper:
   - Provides REST API for automated usability evaluation. REST API contins operations for retrieving defined usabiltiy guidelines and triggering the evaluation process.
   - Guideliner can be used within a development IDE (e.g. Eclipse, IntelliJ IDEA) for automated usability evaluation during the implementation phase of WUI development.
   - Allows triggering automated usability tests as unit tests.
-  
-  <div>Screenshot of the Guideliner User Interface           Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result.</div>
+<table border="0">
+ <tr>
+    <td>Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result</td>
+    <td>Screenshot of the Guideliner User Interface</td>
+ </tr>
+</table>  
   <p align="center">
     <a href="/src/main/resources/assets/usability_results.PNG"><img src="/src/main/resources/assets/usability_results.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400" title="Optional title" ></a>
     <a href="/src/main/resources/assets/usability_guidelines.PNG"><img src="/src/main/resources/assets/usability_guidelines.PNG" alt="IntelliEye Benchmark Tool in action" width="350" height="400"></a>
