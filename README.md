@@ -78,8 +78,8 @@ If you find this application useful, please cite the following paper:
   - Guideliner can be used within a development IDE (e.g. Eclipse, IntelliJ IDEA) for automated usability evaluation during the implementation phase of WUI development.
   - Allows triggering automated usability tests as unit tests.
 <table border="0">
- <tr>
-    <td>Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result.
+ <tr border="0">
+    <td border="0">Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result.
    </td>
     <td>Screenshot of the Guideliner User Interface.</td>
  </tr>
