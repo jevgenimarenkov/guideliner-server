@@ -8,7 +8,7 @@ Guideliner provides a possibility to perform pre-release and implementation-time
 The Guideliner has been established as an outcome of research conducted in Tallinn University of Technology (TTÜ).
 
 # Publications
-If you find this application useful, please cite the following paper:
+If you find this application useful, please cite the following papers:
 
 <a name="ref-1">[1] Marenkov, J., Robal, T., & Kalja, A.: Design-Time Web Usability Evaluation with Guideliner. Complex Systems Informatics and Modeling Quarterly, (15), 90-109. (2018)
 ```
@@ -75,7 +75,8 @@ If you find this application useful, please cite the following paper:
 }
 ```
 # Features
-  - Contains 55 accessibility guidelines, 23 common usabil  ity guidelines suitable for desktop and mobile devices and 20 usability guidelines suitable only for mobile devices.  The primay sources of guidelines are recommendations in scientific publications, WCAG and Section 508 guidelines, Research-Based Web Design and Usability Guidelines from U.S. Dept. of Health and Human Services, and supplemented with recommendations from the Nielsen Norman Group. All guidelines are stored in designed usability ontology.
+  - Contains 55 accessibility guidelines, 23 common usability guidelines suitable for desktop and mobile devices and 20 usability guidelines suitable only for mobile devices.  The primay sources of guidelines are recommendations in scientific publications, WCAG and Section 508 guidelines, Research-Based Web Design and Usability Guidelines from U.S. Dept. of Health and Human Services, and supplemented with recommendations from the Nielsen Norman Group. All guidelines are stored in designed usability ontology.
+  - Allows checking WUI conformance to visual usability as well as HTML-centric usability guidelines.
   - Provides REST API for automated usability evaluation. REST API contins operations for retrieving defined usabiltiy guidelines and triggering the evaluation process.
   - Guideliner can be used within a development IDE (e.g. Eclipse, IntelliJ IDEA) for automated usability evaluation during the implementation phase of WUI development.
   - Allows triggering automated usability tests as unit tests.
