@@ -86,7 +86,7 @@ If you find this application useful, please cite the following papers:
 | ![Screenshot2](/src/main/resources/assets/usability_guidelines.PNG) |
 | ![Screenshot1](/src/main/resources/assets/usability_results.PNG)    |
 | Screenshot of the Guideliner User Interface – an excerpt contains initial page for triggering the evaluation process |
-| Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result. 
+| Screenshot from the Guideliner User Interface – an excerpt contains an example of a passed and a failed usability evaluation result.|
 
 
 # Installing
