@@ -13,6 +13,7 @@ import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.estimation.result.FailedElement;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
 import ee.ttu.usability.guideliner.util.ContrastEstimator;
+import ee.ttu.usability.guideliner.util.Logger;
 import lombok.extern.slf4j.Slf4j;
 
 import org.openqa.selenium.By;
@@ -129,11 +130,11 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 		List<WebElement> filteredElement = new ArrayList<WebElement>();
 		for (WebElement element : allLinks) {
 			if (element.getText().trim().length() > 100) {
-				System.out.println(element.getText());
+				Logger.Info(element.getText());
 				filteredElement.add(element);
 			}
 		}
-		System.out.println("ESTIMATION");
+		Logger.Info("Contrast evaluated.");
 		return estimator.estimate(filteredElement, driver, screenshot);
 	}
 

@@ -57,7 +57,7 @@ public class Screenshoter {
 					generateScreenshotFileName() + ".png");
 			ensureFolderExists(screenshotOfElement);
 			ImageIO.write(dest, "png", screenshotOfElement);
-			System.out.println("SCREEN TOOK " + startTime.until(LocalDateTime.now(), ChronoUnit.MILLIS));
+			Logger.Info("SCREEN TOOK " + startTime.until(LocalDateTime.now(), ChronoUnit.MILLIS));
 			return screenshotOfElement;
 		} catch (Exception e) {
 			//e.printStackTrace();
