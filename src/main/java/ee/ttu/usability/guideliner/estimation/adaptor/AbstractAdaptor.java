@@ -35,17 +35,18 @@ public class AbstractAdaptor {
 	
 	protected BufferedImage screenshot = null;
 
-
 	protected Integer getAmountOfUnit(String string, Unit unit) {
-		if (Unit.WORD == unit) {
-			 StringTokenizer st = new StringTokenizer(string);
-			 return st.countTokens();
+		if (string == null || unit == null) {
+			return 0;
 		}
-		if (Unit.LINE == unit) {
-		   String[] lines = string.split("\r\n|\r|\n");
-		   return  lines.length;
+		switch (unit) {
+			case WORD:
+				return new StringTokenizer(string).countTokens();
+			case LINE:
+				return (int) string.lines().count();
+			default:
+				return 0;
 		}
-		return null;
 	}
 
 	FailedElement prepareFailedElement(String type, String text, String description, String path) {
