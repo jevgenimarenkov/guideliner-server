@@ -60,14 +60,7 @@ public class RadioAdaptor extends AbstractFormAdaptor {
         return setSuccessFlag(result);
     }
 
-    private boolean existsElementByY(Integer y, List<Integer> radiosWihtCoordinates) {
-        for (Integer radioY : radiosWihtCoordinates) {
-            if (radioY.equals(y)) {
-                return true;
-            }
-        }
-        return false;
+    private boolean existsElementByY(Integer y, List<Integer> radiosWithCoordinates) {
+        return radiosWithCoordinates.stream().anyMatch(radioY -> radioY.equals(y));
     }
-
-
 }
