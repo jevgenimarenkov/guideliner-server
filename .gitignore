@@ -43,3 +43,4 @@ rebel.xml
 server/src/main/resources/version.properties
 wsclient/src/generated
 *.log
+*.sh
