@@ -68,13 +68,9 @@ public class AbstractAdaptor {
 		}
 		return element;
 	}
-	
+
 	protected EvaluationResult setSuccessFlag(EvaluationResult result) {
-		if (result.getFailedElements().size() == 0)
-			result.setResult(ResultType.SUCCESS);
-		else 
-			result.setResult(ResultType.FAIL);
-		
+		result.setResult(result.getFailedElements().isEmpty() ? ResultType.SUCCESS : ResultType.FAIL);
 		return result;
 	}
 
