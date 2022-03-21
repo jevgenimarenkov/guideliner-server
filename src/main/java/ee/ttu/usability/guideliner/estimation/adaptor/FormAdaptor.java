@@ -55,26 +55,26 @@ public class FormAdaptor extends AbstractAdaptor {
 		
 		return result;
 	}
-	
+
 	void checkElementContainsLabel(List<FailedElement> failedElements, String xpath, ElementType type) {
 		List<WebElement> findElements = driver.findElements(By.xpath(xpath));
-		for (WebElement el : findElements) {
-			String id = el.getAttribute("id");
-			String name = el.getAttribute("name");
-			if (StringUtils.isNotBlank(id)) {
-				List<WebElement> elemetns = driver.findElements(By.xpath("//label[@for='" + id + "' or @for='" + name + "']"));
-				if (elemetns.size() == 0) {
-					FailedElement failed = new FailedElement();
-					failed.setType(type.name());
-					failed.setText(id);
-					failed.setDescription("No label is found for the element with id " + id);			
-					File file = screenshoter.takeScreenshot(screenshot, el, driver);
-					failed.setPathToElement(file.getName());
-					failedElements.add(failed);
-					
-				}
-			}
-		}
+		driver.findElements(By.xpath(xpath))
+				.stream()
+				.forEach(el -> {
+					String id = el.getAttribute("id");
+					String name = el.getAttribute("name");
+					if (StringUtils.isNotBlank(id)) {
+						List<WebElement> elemetns = driver.findElements(By.xpath("//label[@for='" + id + "' or @for='" + name + "']"));
+						if (elemetns.size() == 0) {
+							FailedElement failed = new FailedElement();
+							failed.setType(type.name());
+							failed.setText(id);
+							failed.setDescription("No label is found for the element with id " + id);
+							File file = screenshoter.takeScreenshot(screenshot, el, driver);
+							failed.setPathToElement(file.getName());
+							failedElements.add(failed);
+						}
+					}
+				});
 	}
-	
 }
