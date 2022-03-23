@@ -99,7 +99,7 @@ Download the `.jar` file [here](/artifact/guideliner.jar). It includes all depen
 Check out the code. Install and start the server.
 ```
 $ mvn install
-$ mnv spring-boot:run
+$ mvn spring-boot:run
 ```
 # Remarks
 
