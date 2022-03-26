@@ -18,8 +18,9 @@ public class EmbedAdaptor extends AbstractAdaptor {
 	public EvaluationResult execute(Embed applet) throws IOException {
 		if (applet.getAlternativeText() != null) {
 			return evaluateAlternativeText(applet.getAlternativeText());
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	private EvaluationResult evaluateAlternativeText(AlternativeText alt) throws IOException {
