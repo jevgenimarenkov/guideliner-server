@@ -22,8 +22,9 @@ public class FormAdaptor extends AbstractAdaptor {
 	public EvaluationResult execute(Form form) throws IOException {
 		if (form.getLabel() != null) {
 			return evaluateExistanceOfLabal(form);
-		} 
-		return null;
+		} else {
+			return null;
+		}
 	}
 
 	// TODO finish 
