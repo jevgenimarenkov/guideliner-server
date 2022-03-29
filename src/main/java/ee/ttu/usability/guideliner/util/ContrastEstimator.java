@@ -113,13 +113,10 @@ public class ContrastEstimator {
 	}
 
 	private static boolean isLargeText(float textSize, boolean isBold) {
-		if ((textSize >= ContrastUtils.WCAG_LARGE_TEXT_MIN_SIZE)
-				|| ((textSize >= ContrastUtils.WCAG_LARGE_BOLD_TEXT_MIN_SIZE) && isBold)) {
-			return true;
-		}
-		return false;
+		return textSize >= ContrastUtils.WCAG_LARGE_TEXT_MIN_SIZE
+				|| (textSize >= ContrastUtils.WCAG_LARGE_BOLD_TEXT_MIN_SIZE && isBold);
 	}
-	
+
 	FailedElement prepareFailedElement(String type, String text, String description, String path) {
 		FailedElement element = new FailedElement();
 		element.setType(type);
