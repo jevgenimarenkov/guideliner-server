@@ -51,7 +51,7 @@ public class RadioAdaptor extends AbstractFormAdaptor {
         for (WebElement radioEl : elements) {
             Point location = radioEl.getLocation();
             if (existsElementByY(location.getY(), radiosWihtCoordinates)) {
-                File file = screenshoter.takeScreenshot(screenshot, radioEl, driver);
+                File file = screenshoter.takeScreenshot(screenshot.get(), radioEl, driver);
                 result.getFailedElements().add(prepareFailedElement("Label", radioEl.getAttribute("outerHTML"), "Radio buttons should be vertically aligned.", file));
             }
             radiosWihtCoordinates.add(location.getY());

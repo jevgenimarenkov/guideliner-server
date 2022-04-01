@@ -78,7 +78,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 				if (unit == Unit.TEXT) {
 					prohibitedWord =  l.getAttribute("innerHTML");
 					if (action.DO_NOT_FOLLOW == action && StringUtils.isNotEmpty(prohibitedWord) && prohibitedWord.equals(l.getAttribute("alt"))) {
-						File file = screenshoter.takeScreenshot(screenshot, l, driver);
+						File file = screenshoter.takeScreenshot(screenshot.get(), l, driver);
 						result.getFailedElements().add(prepareFailedElement("UI Page", "Elements with alt attribute", "The word " + prohibitedWord + "  for alternative text is not allowed as it duplicates the link text" , file));
 					}
 				}
@@ -97,7 +97,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 		for (WebElement el : findElements) {
 			Integer amountOfUnits = getAmountOfUnit(el.getText(), page.getUnit());			
 			 if (amountOfUnits > page.getContentLength()) {
-				 File file = screenshoter.takeScreenshot(screenshot, el, driver);
+				 File file = screenshoter.takeScreenshot(screenshot.get(), el, driver);
 				 result.getFailedElements().add(prepareFailedElement(
 				 		ElementType.LINK.name(), el.getText(),"Amount of " + page.getUnit() + " was " + amountOfUnits , file));
 				 result.setResult(ResultType.FAIL);
@@ -110,7 +110,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 		screenshot = screenshoter.makeScreenshot(driver);
 		ContrastEstimator estimator = new ContrastEstimator();
 		List<WebElement> allLinks = getAllLinks(driver);
-		return estimator.estimate(allLinks, driver, screenshot);
+		return estimator.estimate(allLinks, driver, screenshot.get());
 	}
 
 	private EvaluationResult evaluateWidth(Link link) throws IOException {
@@ -127,7 +127,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 			}
 
 			if (link.getWidth().getContentLength() > dimension.getWidth()) {
-				File file = screenshoter.takeScreenshot(screenshot, webLink, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), webLink, driver);
 				result.getFailedElements().add(prepareFailedElement(
 						ElementType.LINK.name(), webLink.getText(),"The width of the link is smaller then expected. Expected minimum: "
 								+ link.getWidth().getContentLength() + " actual: " + dimension.getWidth() , file));
@@ -155,7 +155,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 			}
 
 			if (link.getHeight().getContentLength() > size.getHeight()) {
-				File file = screenshoter.takeScreenshot(screenshot, webLink, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), webLink, driver);
 				result.getFailedElements().add(prepareFailedElement(
 						ElementType.LINK.name(), webLink.getText(),"The height of the link is smaller then expected. Expected minimum: "
 								+ link.getHeight().getContentLength() + " actual: " + size.getHeight() , file));
@@ -200,7 +200,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 //				System.out.println("---------------------------------");
 //				System.out.println(element.getText());
 //				System.out.println("---------------------------------");
-				File file = screenshoter.takeScreenshot(screenshot, el.getValue().webElement, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), el.getValue().webElement, driver);
 				result.getFailedElements().add(prepareFailedElement(
 						ElementType.LINK.name(), el.getKey(),errorMessage, NO_IMAGE));
 			}
@@ -309,7 +309,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 
 		for (Map.Entry<String, LinkColor> entry : linkColors.entrySet()) {
 			if (entry.getValue().count > 3) {
-				File file = screenshoter.takeScreenshot(screenshot, entry.getValue().element, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), entry.getValue().element, driver);
 				result.getFailedElements().add(prepareFailedElement(
 						ElementType.LINK.name(), entry.getValue().element.getText(), "The link has different color then other links", file));
 			}
