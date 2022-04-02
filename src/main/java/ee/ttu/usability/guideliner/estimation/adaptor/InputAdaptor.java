@@ -57,7 +57,7 @@ public class InputAdaptor extends AbstractAdaptor {
             }
 
             if (input.getWidth().getContentLength() > dimension.getWidth()) {
-                File file = screenshoter.takeScreenshot(screenshot, webLink, driver);
+                File file = screenshoter.takeScreenshot(screenshot.get(), webLink, driver);
                 result.getFailedElements().add(prepareFailedElement(
                         ElementType.INPUT.name(), webLink.getText(),"The width of the input is smaller then expected. Expected minimum: "
                                 + input.getWidth().getContentLength() + " actual: " + dimension.getWidth() , file));
@@ -86,7 +86,7 @@ public class InputAdaptor extends AbstractAdaptor {
             }
 
             if (input.getHeight().getContentLength() > dimension.getHeight()) {
-                File file = screenshoter.takeScreenshot(screenshot, webLink, driver);
+                File file = screenshoter.takeScreenshot(screenshot.get(), webLink, driver);
                 result.getFailedElements().add(prepareFailedElement(
                         ElementType.LINK.name(), webLink.getText(),"The height of the input is smaller then expected. Expected minimum: "
                                 + input.getHeight().getContentLength() + " actual: " + dimension.getHeight() , file));
@@ -127,7 +127,7 @@ public class InputAdaptor extends AbstractAdaptor {
 //				System.out.println("---------------------------------");
 //				System.out.println(element.getText());
 //				System.out.println("---------------------------------");
-                File file = screenshoter.takeScreenshot(screenshot, el.getValue().webElement, driver);
+                File file = screenshoter.takeScreenshot(screenshot.get(), el.getValue().webElement, driver);
                 result.getFailedElements().add(prepareFailedElement(
                         ElementType.INPUT.name(), el.getKey(),errorMessage, file));
             }
@@ -213,7 +213,7 @@ public class InputAdaptor extends AbstractAdaptor {
         for (WebElement radioEl : elements) {
             Point point = radioEl.getLocation();
             if (existsElementByY(point.getY(), radiosWihtCoordinates)) {
-                File file = screenshoter.takeScreenshot(screenshot, radioEl, driver);
+                File file = screenshoter.takeScreenshot(screenshot.get(), radioEl, driver);
                 result.getFailedElements().add(prepareFailedElement("Input", radioEl.getAttribute("outerHTML"), "Input should be vertically aligned.", file));
             }
             radiosWihtCoordinates.add(point.getY());
@@ -253,7 +253,7 @@ public class InputAdaptor extends AbstractAdaptor {
             element.click();
             String colorAfter = element.getCssValue("border-top-color");
             if (colorBefore.equals(colorAfter)) {
-                File file = screenshoter.takeScreenshot(screenshot, element, driver);
+                File file = screenshoter.takeScreenshot(screenshot.get(), element, driver);
                 result.getFailedElements().add(prepareFailedElement(
                         ElementType.INPUT.name(), element.getAttribute("outerHTML"), "Input should be highligted after selected" , file));
                 result.setResult(ResultType.FAIL);            }

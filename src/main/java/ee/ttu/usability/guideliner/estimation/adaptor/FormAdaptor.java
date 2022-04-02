@@ -31,7 +31,7 @@ public class FormAdaptor extends AbstractAdaptor {
 	// TODO finish 
 	private EvaluationResult evaluateExistanceOfLabal(Form form) throws IOException {
 		
-		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
+		screenshot = screenshoter.makeScreenshot(driver);
 		
 		log.debug("Evaluation labels for Form");
 		

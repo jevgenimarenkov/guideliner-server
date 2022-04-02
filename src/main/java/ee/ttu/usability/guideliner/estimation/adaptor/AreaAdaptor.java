@@ -31,7 +31,7 @@ public class AreaAdaptor extends AbstractAdaptor {
 		areas.forEach(a -> {
 			String attribute = a.getAttribute("alt");
 			if (StringUtils.isBlank(attribute)) {
-				File file = screenshoter.takeScreenshot(screenshot, a, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), a, driver);
 				result.getFailedElements().add(prepareFailedElement(ElementType.AREA.name(), "Area", "Area does not have alternative text", file));
 			}
 		});

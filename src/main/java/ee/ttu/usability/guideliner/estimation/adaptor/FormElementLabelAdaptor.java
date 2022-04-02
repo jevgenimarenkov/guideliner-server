@@ -44,7 +44,7 @@ public class FormElementLabelAdaptor extends AbstractAdaptor {
                 WebElement labelWithSameCoordinate = getElementByY(location.getY(), labelsWithCoordinates);
                 System.out.println("input" + " -- " + input.getAttribute("name") + " -- " + location.getY() + " label with coord" + (labelWithSameCoordinate != null ? labelWithSameCoordinate.getText() : null));
                 if (labelWithSameCoordinate != null && StringUtils.isNotEmpty(labelWithSameCoordinate.getText())) {
-                    File file = screenshoter.takeScreenshot(screenshot, labelWithSameCoordinate, driver);
+                    File file = screenshoter.takeScreenshot(screenshot.get(), labelWithSameCoordinate, driver);
                     result.getFailedElements().add(prepareFailedElement("Label", labelWithSameCoordinate.getText(), "Label should be above input.", file));
                 }
             }

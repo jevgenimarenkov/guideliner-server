@@ -38,7 +38,7 @@ public class CheckButtonAdaptor extends AbstractFormAdaptor {
     }
 
     private EvaluationResult evaluateLayout(CheckBox checkBox) throws IOException {
-        screenshot = Optional.of(screenshoter.makeScreenshot(driver));
+        screenshot = screenshoter.makeScreenshot(driver);
         EvaluationResult result = new EvaluationResult();
         result.setElementType(ElementType.LINK);
 
