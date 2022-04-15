@@ -67,7 +67,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 					String text = el.getText().trim();
 					Integer amountOfUnit = getAmountOfUnit(text, page.getUnit());
 					if (amountOfUnit > page.getContentLength()) {
-						File file = screenshoter.takeScreenshot(screenshot, el, driver);
+						File file = screenshoter.takeScreenshot(screenshot.get(), el, driver);
 						 result.getFailedElements().add(prepareFailedElement(ElementType.PARAGRAPH.name(), ElementType.PARAGRAPH.name()
 								 , "Paragraph contains more words then exepcted: " + amountOfUnit , file.getName()));
 						 result.setElementType(ElementType.NUMBERED_LIST);
@@ -83,8 +83,8 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 
 	private EvaluationResult evaluateWordsInSentence(Paragraph page) throws IOException {
 		BreakIterator iterator = BreakIterator.getSentenceInstance(Locale.US);
-		
-		screenshot = screenshoter.makeScreenshot(driver);
+
+		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
 		
 		List<FailedElement> failedElements = new ArrayList<FailedElement>();
 		log.debug("Evaluation evaluateContentLength for Link");
@@ -125,7 +125,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 	}
 
 	private EvaluationResult evaluateContrast(Paragraph paragraph) throws IOException {
-		screenshot = screenshoter.makeScreenshot(driver);
+		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
 		ContrastEstimator estimator = new ContrastEstimator();
 		List<WebElement> allLinks = getAllElelements(driver);
 		List<WebElement> filteredElement = new ArrayList<WebElement>();
@@ -136,7 +136,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 			}
 		}
 		Logger.Info("Contrast evaluated.");
-		return estimator.estimate(filteredElement, driver, screenshot);
+		return estimator.estimate(filteredElement, driver, screenshot.get());
 	}
 
 	public List<WebElement> getAllElelements(WebDriver driver) {
