@@ -62,7 +62,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 			elements.forEach(el -> {
 				if (StringUtils.isNotBlank(el.getAttribute("onclick")) && StringUtils.isBlank(el.getAttribute("onkeypress"))) {
 					String text = el.getAttribute("innerHTML");
-					result.getFailedElements().add(prepareFailedElement(ElementType.BUTTON.name(), text, "OnClick should be used with onKeyPress ", screenshoter.takeScreenshot(screenshot, el, driver)));
+					result.getFailedElements().add(prepareFailedElement(ElementType.BUTTON.name(), text, "OnClick should be used with onKeyPress ", screenshoter.takeScreenshot(screenshot.get(), el, driver)));
 				}
 			});
 		}
