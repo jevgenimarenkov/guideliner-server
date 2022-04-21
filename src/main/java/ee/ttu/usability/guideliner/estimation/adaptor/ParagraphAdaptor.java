@@ -51,7 +51,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 			return result;
 		}
 		log.debug("Evaluating evaluateWordsInParagraph");
-		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
+		screenshot = screenshoter.makeScreenshot(driver);
 		log.debug("Evaluation evaluateWordsInParagraph for Link");
 		EvaluationResult result = new EvaluationResult();
 		result.setElementType(ElementType.PARAGRAPH);
@@ -84,7 +84,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 	private EvaluationResult evaluateWordsInSentence(Paragraph page) throws IOException {
 		BreakIterator iterator = BreakIterator.getSentenceInstance(Locale.US);
 
-		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
+		screenshot = screenshoter.makeScreenshot(driver);
 		
 		List<FailedElement> failedElements = new ArrayList<FailedElement>();
 		log.debug("Evaluation evaluateContentLength for Link");
@@ -125,7 +125,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 	}
 
 	private EvaluationResult evaluateContrast(Paragraph paragraph) throws IOException {
-		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
+		screenshot = screenshoter.makeScreenshot(driver);
 		ContrastEstimator estimator = new ContrastEstimator();
 		List<WebElement> allLinks = getAllElelements(driver);
 		List<WebElement> filteredElement = new ArrayList<WebElement>();

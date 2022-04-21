@@ -211,7 +211,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		EvaluationResult result = new EvaluationResult();
 		result.setElementType(ElementType.PAGE);
 
-		screenshot = screenshoter.makeScreenshot(driver);
+		var screenshot = screenshoter.makeScreenshot(driver).get();
 		
 		if (screenshot.getHeight() > page.getHeight().getContentLength()) {
 			FailedElement failed = new FailedElement();
@@ -301,7 +301,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 	
 	private EvaluationResult evaluateText(UIPage page) throws IOException {
 		log.debug("Evaluating evaluateText");
-		screenshot = screenshoter.makeScreenshot(driver);
+		var screenshot = screenshoter.makeScreenshot(driver).get();
 		EvaluationResult result = new EvaluationResult();
 		result.setElementType(ElementType.PAGE);
 		result.setResult(ResultType.SUCCESS);
@@ -589,7 +589,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			imgs.forEach(e -> {
 				String alt = e.getAttribute("alt");
 				if (StringUtils.isNotBlank(alt) && prohibitedWords.contains(alt.trim())) {
-					 File file = screenshoter.takeScreenshot(screenshot, e, driver);			 
+					 File file = screenshoter.takeScreenshot(screenshot.get(), e, driver);
 					 result.getFailedElements().add(prepareFailedElement("UI Page", "Elements with alt attribute", "The word " + alt.trim() + " for alternative text is not allowed" , file));
 				}
 			});
