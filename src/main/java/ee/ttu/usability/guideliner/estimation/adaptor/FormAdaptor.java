@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import ee.ttu.usability.guideliner.domain.element.link.Form;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
@@ -30,7 +31,7 @@ public class FormAdaptor extends AbstractAdaptor {
 	// TODO finish 
 	private EvaluationResult evaluateExistanceOfLabal(Form form) throws IOException {
 		
-		screenshot = screenshoter.makeScreenshot(driver);
+		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
 		
 		log.debug("Evaluation labels for Form");
 		
@@ -70,8 +71,10 @@ public class FormAdaptor extends AbstractAdaptor {
 							failed.setType(type.name());
 							failed.setText(id);
 							failed.setDescription("No label is found for the element with id " + id);
-							File file = screenshoter.takeScreenshot(screenshot, el, driver);
-							failed.setPathToElement(file.getName());
+							screenshot.ifPresent(val -> {
+								File file = screenshoter.takeScreenshot(val, el, driver);
+								failed.setPathToElement(file.getName());
+							});
 							failedElements.add(failed);
 						}
 					}

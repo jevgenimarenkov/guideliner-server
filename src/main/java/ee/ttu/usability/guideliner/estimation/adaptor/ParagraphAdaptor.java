@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 import ee.ttu.usability.guideliner.domain.dataproperty.Unit;
 import ee.ttu.usability.guideliner.domain.element.content.Paragraph;
@@ -50,7 +51,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 			return result;
 		}
 		log.debug("Evaluating evaluateWordsInParagraph");
-		screenshot = screenshoter.makeScreenshot(driver);
+		screenshot = Optional.of(screenshoter.makeScreenshot(driver));
 		log.debug("Evaluation evaluateWordsInParagraph for Link");
 		EvaluationResult result = new EvaluationResult();
 		result.setElementType(ElementType.PARAGRAPH);
