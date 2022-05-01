@@ -92,9 +92,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		if (page.getOnKey() != null && page.getOnDbClick() != null) {
 			return checkThatAttributesAreUsedTogether("onkey", "ondbclick");
 		}
-
-
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 
