@@ -34,7 +34,7 @@ public class GraphicAdaptor extends AbstractAdaptor {
 		if (graphic.getAlternativeText() != null) {
 			return evaluateAlternativeText(graphic);
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateContentLength(Graphic graphic) throws IOException {
