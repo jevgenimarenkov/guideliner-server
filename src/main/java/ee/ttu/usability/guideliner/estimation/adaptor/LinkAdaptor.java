@@ -46,7 +46,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 		} else if (link.getHasText() != null && link.getHasText() == true) {
 			return evaluateThatInpuHasText(link);
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	protected EvaluationResult evaluateThatInpuHasText(Link link) {
