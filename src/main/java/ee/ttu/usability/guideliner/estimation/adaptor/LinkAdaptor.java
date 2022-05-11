@@ -264,7 +264,6 @@ public class LinkAdaptor extends AbstractAdaptor {
 
 		List<WebElement> webLinks = getAllLinks(driver);
 
-		String linkColor = null;
 
 		Map<String, LinkColor> linkColors = new HashMap();
 		System.out.println(LocalDateTime.now());
