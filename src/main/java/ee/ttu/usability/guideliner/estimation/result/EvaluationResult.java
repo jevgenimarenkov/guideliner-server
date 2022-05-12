@@ -23,7 +23,7 @@ public class EvaluationResult {
 	private ElementType elementType;
 
 	@Enumerated(EnumType.STRING)
-	private ResultType result;
+	private ResultType result = ResultType.UNKNOWN;
 
 	@OneToMany(mappedBy = "evaluationResult", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<FailedElement> failedElements = new ArrayList<FailedElement>();
@@ -41,4 +41,6 @@ public class EvaluationResult {
 	private String guidelineDescription;
 
 	private Long evaluationTime;
+
+	public static EvaluationResult EMPTY_RESULT = new EvaluationResult();
 }
