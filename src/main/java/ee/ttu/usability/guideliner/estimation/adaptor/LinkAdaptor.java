@@ -195,7 +195,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 
 		for (Map.Entry<String, TopButton> el : topButtomCoordinates.entrySet()) {
 //			System.out.println(element.getText());
-			String errorMessage = isLinkWithBadLocation(el.getKey(), el.getValue(), topButtomCoordinates, link.getDistance().getContentLength());
+			String errorMessage = GetLinkDescription(el.getKey(), el.getValue(), topButtomCoordinates, link.getDistance().getContentLength());
 			if (errorMessage != null) {
 //				System.out.println("---------------------------------");
 //				System.out.println(element.getText());
@@ -205,21 +205,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 						ElementType.LINK.name(), el.getKey(),errorMessage, NO_IMAGE));
 			}
 		}
-//		for (WebElement element : links) {
-//			if (StringUtils.isEmpty(element.getText())) {
-//				continue;
-//			}
-////			System.out.println(element.getText());
-//			String errorMessage = isLinkWithBadLocation(element, topButtomCoordinates, link.getDistance().getContentLength());
-//			if (errorMessage != null) {
-////				System.out.println("---------------------------------");
-////				System.out.println(element.getText());
-////				System.out.println("---------------------------------");
-//				//File file = screenshoter.takeScreenshot(screenshot, element, driver);
-//				result.getFailedElements().add(prepareFailedElement(
-//						ElementType.LINK.name(), element.getText(),errorMessage, NO_IMAGE));
-//			}
-//		}
+
 
 		// find all links
 		// iterate over all links and finf if there are another link close to it
@@ -227,7 +213,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 		return setSuccessFlag(result);
 	}
 
-	private String isLinkWithBadLocation(String text, TopButton element, Map<String, TopButton> elements, Integer distanceBetween) {
+	private String GetLinkDescription(String text, TopButton element, Map<String, TopButton> elements, Integer distanceBetween) {
 		Integer top = element.top;
 		Integer button = element.buttom;
 
