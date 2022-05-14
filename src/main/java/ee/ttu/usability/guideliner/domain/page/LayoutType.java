@@ -2,7 +2,8 @@ package ee.ttu.usability.guideliner.domain.page;
 
 public enum LayoutType {
 	FLUID,
-	VERTICAL;
+	VERTICAL,
+	UNKNOWN;
 	
 	public static LayoutType convertToLayoutType(String layout) {
 		if (layout.equalsIgnoreCase(FLUID.name())) {
@@ -10,6 +11,6 @@ public enum LayoutType {
 		} else if (layout.equalsIgnoreCase(VERTICAL.name())) {
 			return LayoutType.VERTICAL;
 		}
-		return null;
+		return LayoutType.UNKNOWN;
 	}
 }
