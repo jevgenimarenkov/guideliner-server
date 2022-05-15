@@ -205,11 +205,6 @@ public class LinkAdaptor extends AbstractAdaptor {
 						ElementType.LINK.name(), el.getKey(),errorMessage, NO_IMAGE));
 			}
 		}
-
-
-		// find all links
-		// iterate over all links and finf if there are another link close to it
-
 		return setSuccessFlag(result);
 	}
 
