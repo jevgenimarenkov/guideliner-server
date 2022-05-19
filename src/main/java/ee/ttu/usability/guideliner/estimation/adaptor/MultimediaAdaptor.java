@@ -17,7 +17,7 @@ public class MultimediaAdaptor extends AbstractAdaptor {
 		if (el.getAlternativeText() != null) {
 			return evaluateAlternativeText(el);
 		} 
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateAlternativeText(Multimedia el) throws IOException {
