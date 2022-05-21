@@ -322,9 +322,6 @@ public class LinkAdaptor extends AbstractAdaptor {
 		driver.navigate().refresh();
 
 		String mostlyUsedColor = linkColors.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getKey();
-//		System.out.println("Mostly used colot");
-//		System.out.println(mostlyUsedColor);
-//		System.out.println(linkColors.get(mostlyUsedColor));
 
 		int numberOfTrials = 0;
 		int processed = 0;
