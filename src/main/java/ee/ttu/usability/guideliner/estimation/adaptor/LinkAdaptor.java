@@ -282,11 +282,6 @@ public class LinkAdaptor extends AbstractAdaptor {
 			}
 		}
 		System.out.println(LocalDateTime.now());
-//		Map<String, Integer> results = linkColors.entrySet().stream()
-//				.sorted(Map.Entry.comparingByValue(Comparator.naturalOrder()))
-//				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-//						(oldValue, newValue) -> oldValue, LinkedHashMap::new));
-
 		for (Map.Entry<String, LinkColor> entry : linkColors.entrySet()) {
 			if (entry.getValue().count > 3) {
 				File file = screenshoter.takeScreenshot(screenshot.get(), entry.getValue().element, driver);
