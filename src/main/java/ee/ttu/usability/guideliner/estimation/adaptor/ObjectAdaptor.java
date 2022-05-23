@@ -19,7 +19,7 @@ public class ObjectAdaptor extends AbstractAdaptor {
 		if (applet.getAlternativeText() != null) {
 			return evaluateAlternativeText(applet.getAlternativeText());
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateAlternativeText(AlternativeText alt) throws IOException {

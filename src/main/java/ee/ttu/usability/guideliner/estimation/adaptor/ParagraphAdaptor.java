@@ -32,7 +32,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 		} else if (paragraph.getContentLength() != null) {
 			return evaluateContentLength(paragraph);
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	public EvaluationResult evaluateContentLength(Paragraph page) throws IOException {

@@ -23,7 +23,7 @@ public class TableHeaderAdaptor extends AbstractAdaptor {
 		if (BooleanUtils.isTrue(applet.getHasText())) {
 			return evaluateThatInpuHasText(applet);
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	protected EvaluationResult evaluateThatInpuHasText(TableHeader link) {
