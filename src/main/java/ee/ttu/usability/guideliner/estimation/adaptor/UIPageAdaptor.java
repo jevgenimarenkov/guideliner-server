@@ -529,7 +529,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		if (blink.getIsValued() != null && !blink.getIsValued()) {
 			return  evaluateTagDoesNotExist("blink", "Blink tag", "Blink tag <blink> is not allowed");
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateMarquee(Marquee marquee) {
