@@ -536,7 +536,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		if (marquee.getIsValued() != null && !marquee.getIsValued()) {
 			return  evaluateTagDoesNotExist("marquee", "Marquee tag", "Marquee tag <marquee> is not allowed");
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateTagAndItsFollowingTags(String firstTag, List<String> nextTags) {
