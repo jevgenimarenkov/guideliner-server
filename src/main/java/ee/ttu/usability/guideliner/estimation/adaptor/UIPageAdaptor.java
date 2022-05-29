@@ -643,7 +643,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		}
 
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateHref(UIPage page) {
