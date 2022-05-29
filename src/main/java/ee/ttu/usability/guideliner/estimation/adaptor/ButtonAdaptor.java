@@ -220,7 +220,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 				return "Element: with html " + element.getKey() + " is very close to " + entry.getKey();
 			}
 		}
-		return null;
+		return "";
 	}
 
 
