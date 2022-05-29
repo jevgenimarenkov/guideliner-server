@@ -272,7 +272,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 				return "Link: with text " + text + " is very close to " + entry.getKey();
 			}
 		}
-		return null;
+		return "";
 	}
 
 	private EvaluationResult evaluateSameColor(Link link) throws IOException {
