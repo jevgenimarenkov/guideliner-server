@@ -336,7 +336,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 				for (int i = 0; i < page.getText().getContentLength(); i++) {
 					space += " ";
 				}
-				Pattern compile = Pattern.compile(space + "+");
+				Pattern compile = Pattern.compile(space + '+');
 				Matcher matcher = compile.matcher(text);				
 				while (matcher.find()) {
 					int start = matcher.start();
