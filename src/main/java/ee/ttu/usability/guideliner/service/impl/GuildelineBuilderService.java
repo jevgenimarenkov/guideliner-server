@@ -470,7 +470,7 @@ public class GuildelineBuilderService {
 				 } else if ("Text".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 						if (((UIPage) element).getText() == null)
 							((UIPage) element).setText(new Text());
-						((UIPage) element).getText().setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+						((UIPage) element).getText().setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				 } else if ("Width".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					 if (element instanceof Link || element instanceof Button || element instanceof Input) {
 						 if (element.getWidth() == null)
