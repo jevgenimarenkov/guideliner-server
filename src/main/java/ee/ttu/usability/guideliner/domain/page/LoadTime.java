@@ -5,9 +5,7 @@ import lombok.Data;
 
 @Data
 public class LoadTime {
-
 	private Unit unit;
 	
 	private Integer timeInSeconds;
-	
 }
