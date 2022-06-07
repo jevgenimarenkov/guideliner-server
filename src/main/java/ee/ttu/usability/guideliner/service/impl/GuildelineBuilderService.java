@@ -484,7 +484,7 @@ public class GuildelineBuilderService {
 						 element.getDistance().setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					 }
 				 } else if ("integer".equals(dataProperty.getObject().getDatatype().getIRI().getShortForm())) {
-					 element.setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+					 element.setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				 }
 
 				break;
