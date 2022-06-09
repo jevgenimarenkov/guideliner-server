@@ -722,7 +722,7 @@ public class GuildelineBuilderService {
 				} else if ("CheckBox".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					((CheckBox) element).setMaxNumberOfInputs(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				} else if ("Radio".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
-					((Radio) element).setMaxNumberOfInputs(new Integer(dataProperty.getObject().getLiteral()));
+					((Radio) element).setMaxNumberOfInputs(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				}
 				break;
 			case "hasText" :
