@@ -717,7 +717,7 @@ public class GuildelineBuilderService {
 			case "hasMaxNumberOfInput" :
 				if ("UIPage".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					if (element instanceof UIPage) {
-						((UIPage) element).setMaxNumberOfInputs(new Integer(dataProperty.getObject().getLiteral()));
+						((UIPage) element).setMaxNumberOfInputs(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					}
 				} else if ("CheckBox".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					((CheckBox) element).setMaxNumberOfInputs(new Integer(dataProperty.getObject().getLiteral()));
