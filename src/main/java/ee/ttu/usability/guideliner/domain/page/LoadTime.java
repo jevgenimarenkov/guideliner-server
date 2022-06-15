@@ -8,6 +8,6 @@ public class LoadTime {
 
 	private Unit unit;
 	
-	private Integer contentLength;
+	private Integer timeInSeconds;
 	
 }

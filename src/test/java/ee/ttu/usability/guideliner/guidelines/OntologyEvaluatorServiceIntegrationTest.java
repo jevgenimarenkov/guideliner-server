@@ -251,7 +251,7 @@ public class OntologyEvaluatorServiceIntegrationTest extends AbstractTest {
 		// then
 		Assert.assertNotNull(guidelineElement);
 		Assert.assertNotNull(guidelineElement.getLoadTime());
-		Assert.assertNotNull(guidelineElement.getLoadTime().getContentLength());
+		Assert.assertNotNull(guidelineElement.getLoadTime().getTimeInSeconds());
 		Assert.assertNotNull(guidelineElement.getLoadTime().getUnit());
 	}
 
