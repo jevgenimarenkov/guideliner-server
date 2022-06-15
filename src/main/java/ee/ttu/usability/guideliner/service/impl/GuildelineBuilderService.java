@@ -507,7 +507,7 @@ public class GuildelineBuilderService {
 				}
 				if ("VScroll".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					VerticalScroll scroll = new VerticalScroll();
-					scroll.setValue(new Integer(dataProperty.getObject().getLiteral()));
+					scroll.setValue(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					if (element instanceof UIPage) {
 						((UIPage) element).setVerticalScroll(scroll);
 					}
