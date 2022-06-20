@@ -497,7 +497,7 @@ public class GuildelineBuilderService {
 				System.out.println(((OWLClassImpl) ent.get()).getIRI().getShortForm());
 				if ("HScroll".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					HorizontalScroll scroll = new HorizontalScroll();
-					scroll.setValue(new Integer(dataProperty.getObject().getLiteral()));
+					scroll.setValue(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					if (element instanceof UIPage) {
 						((UIPage) element).setHorizontalScroll(scroll);
 					} else if (element instanceof Navigation) {
