@@ -466,7 +466,7 @@ public class GuildelineBuilderService {
 				 } else if ("LoadTime".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 						if (((UIPage) element).getLoadTime() == null)
 							((UIPage) element).setLoadTime(new LoadTime());
-						((UIPage) element).getLoadTime().setTimeInSeconds(Duration.ofSeconds(Integer.parseInt(dataProperty.getObject().getLiteral())));
+						((UIPage) element).getLoadTime().setValue(Duration.ofSeconds(Integer.parseInt(dataProperty.getObject().getLiteral())));
 				 } else if ("Text".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 						if (((UIPage) element).getText() == null)
 							((UIPage) element).setText(new Text());

@@ -9,5 +9,5 @@ import java.time.Duration;
 public class LoadTime {
 	private Unit unit;
 	
-	private Duration timeInSeconds;
+	private Duration value;
 }

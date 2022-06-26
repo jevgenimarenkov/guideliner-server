@@ -134,10 +134,10 @@ public class UIPageAdaptor extends AbstractAdaptor {
 	
 		WebElement ele = driver.findElement(By.tagName("body"));
 		long finish = System.currentTimeMillis();
-		long totalTime = finish - start; 
+		long totalTime = finish - start;
 		System.out.println("Total Time for page load - "+totalTime); 
 		 
-		if (totalTime > page.getLoadTime().getTimeInSeconds()) {
+		if (totalTime > page.getLoadTime().getValue()) {
 			 result.setResult(ResultType.FAIL);
 			 result.setDescription("Load time exceeded the expected. Load time : " + totalTime);
 		}
