@@ -475,7 +475,7 @@ public class GuildelineBuilderService {
 					 if (element instanceof Link || element instanceof Button || element instanceof Input) {
 						 if (element.getWidth() == null)
 							 element.setWidth(new Width());
-						 element.getWidth().setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+						 element.getWidth().setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					 }
 				 } else if ("Distance".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					 if (element instanceof Link || element instanceof Button || element instanceof Input) {
