@@ -9,17 +9,12 @@ import ee.ttu.usability.guideliner.domain.element.form.Radio;
 import ee.ttu.usability.guideliner.domain.element.form.Select;
 import ee.ttu.usability.guideliner.domain.page.LayoutType;
 import ee.ttu.usability.guideliner.domain.page.UIPage;
-import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.repository.OntologyRepository;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 
 
 public class FiveWeek extends AbstractTest {
@@ -57,7 +52,7 @@ public class FiveWeek extends AbstractTest {
         Assert.assertNotNull(guidelineElement.getDistance());
         Assert.assertEquals(new Integer(40), guidelineElement.getDistance().getContentLength());
         Assert.assertEquals(Unit.PIXCEL, guidelineElement.getDistance().getUnit());
-        Assert.assertEquals(DistanceType.CLICKABLEELEMENT, guidelineElement.getDistance().getDistanceType());
+        Assert.assertEquals(DistanceType.CLICKABLE_ELEMENT, guidelineElement.getDistance().getDistanceType());
     }
 
 

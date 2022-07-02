@@ -532,7 +532,7 @@ public class OntologyEvaluatorServiceIntegrationTest extends AbstractTest {
 		Assert.assertNotNull(guidelineElement.getDistance());
 		Assert.assertEquals(new Integer(48), guidelineElement.getDistance().getContentLength());
 		Assert.assertEquals(Unit.PIXCEL, guidelineElement.getDistance().getUnit());
-		Assert.assertEquals(DistanceType.CLICKABLEELEMENT, guidelineElement.getDistance().getDistanceType());
+		Assert.assertEquals(DistanceType.CLICKABLE_ELEMENT, guidelineElement.getDistance().getDistanceType());
 	}
 
 	@Test
@@ -652,7 +652,7 @@ public class OntologyEvaluatorServiceIntegrationTest extends AbstractTest {
 		Assert.assertNotNull(guidelineElement.getDistance());
 		Assert.assertEquals(new Integer(48), guidelineElement.getDistance().getContentLength());
 		Assert.assertEquals(Unit.PIXCEL, guidelineElement.getDistance().getUnit());
-		Assert.assertEquals(DistanceType.CLICKABLEELEMENT, guidelineElement.getDistance().getDistanceType());
+		Assert.assertEquals(DistanceType.CLICKABLE_ELEMENT, guidelineElement.getDistance().getDistanceType());
 	}
 
 	@Test
