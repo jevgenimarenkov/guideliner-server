@@ -59,7 +59,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 				.filter(t -> StringUtils.isBlank(t.getText()))
 				.collect(Collectors.toList());
 		linksWithNoText.forEach(t -> result.getFailedElements()
-				.add(prepareFailedElement("Link",
+				.add(prepareFailedElement(ElementType.LINK,
 						t.getAttribute("outerHTML"),
 						"Link should have text",
 						NO_IMAGE)));
