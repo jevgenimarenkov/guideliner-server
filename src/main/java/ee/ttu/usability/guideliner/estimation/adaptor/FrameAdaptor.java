@@ -31,7 +31,7 @@ public class FrameAdaptor extends AbstractAdaptor {
         areas.forEach(a -> {
             String attribute = a.getAttribute("title");
             if (StringUtils.isBlank(attribute)) {
-                result.getFailedElements().add(prepareFailedElement(ElementType.FRAME.name(), "Frame", "Frame does not have title.", NO_IMAGE));
+                result.getFailedElements().add(prepareFailedElement(ElementType.FRAME, "Frame", "Frame does not have title.", NO_IMAGE));
             }
         });
 
