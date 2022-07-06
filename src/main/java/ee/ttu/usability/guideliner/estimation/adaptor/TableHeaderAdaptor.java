@@ -33,7 +33,7 @@ public class TableHeaderAdaptor extends AbstractAdaptor {
 		driver.findElements(By.tagName("th")).forEach(t -> {
 			if (StringUtils.isBlank(t.getText())) {
 				result.getFailedElements()
-						.add(prepareFailedElement(ElementType.HEADER.name(), t.getAttribute("outerHTML"), "Th should have text", NO_IMAGE));
+						.add(prepareFailedElement(ElementType.HEADER, t.getAttribute("outerHTML"), "Th should have text", NO_IMAGE));
 			}
 		});
 		return setSuccessFlag(result);
