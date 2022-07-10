@@ -54,18 +54,15 @@ public class LinkAdaptor extends AbstractAdaptor {
 		EvaluationResult result = new EvaluationResult();
 		result.setElementType(ElementType.PAGE);
 		result.setResult(ResultType.SUCCESS);
-
 		List<WebElement> linksWithNoText = driver.findElements(By.tagName("a"))
 				.stream()
 				.filter(t -> StringUtils.isBlank(t.getText()))
 				.collect(Collectors.toList());
-
 		linksWithNoText.forEach(t -> result.getFailedElements()
 				.add(prepareFailedElement("Link",
 						t.getAttribute("outerHTML"),
 						"Link should have text",
 						NO_IMAGE)));
-
 		return setSuccessFlag(result);
 	}
 
