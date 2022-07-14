@@ -50,9 +50,9 @@ public class AbstractAdaptor {
 		}
 	}
 
-	FailedElement prepareFailedElement(String type, String text, String description, String path) {
+	FailedElement prepareFailedElement(ElementType type, String text, String description, String path) {
 		FailedElement element = new FailedElement();
-		element.setType(type);
+		element.setType(type.name());
 		element.setText(text);
 		element.setDescription(description);
 		element.setPathToElement(path);
