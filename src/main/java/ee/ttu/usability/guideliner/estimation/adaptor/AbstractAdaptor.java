@@ -83,7 +83,7 @@ public class AbstractAdaptor {
 		areas.forEach(a -> {
 			String attribute = a.getAttribute("alt");
 			if (StringUtils.isBlank(attribute)) {
-				result.getFailedElements().add(prepareFailedElement(elementType.name(), a.getAttribute("outerHtml"), tagName + " does not have alternative text", NO_IMAGE));
+				result.getFailedElements().add(prepareFailedElement(elementType, a.getAttribute("outerHtml"), tagName + " does not have alternative text", NO_IMAGE));
 			}
 		});
 
