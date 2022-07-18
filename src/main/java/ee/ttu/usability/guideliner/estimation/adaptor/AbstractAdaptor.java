@@ -58,6 +58,15 @@ public class AbstractAdaptor {
 		element.setPathToElement(path);
 		return element;
 	}
+
+	FailedElement prepareFailedElement(String type, String text, String description, String path) {
+		FailedElement element = new FailedElement();
+		element.setType(type);
+		element.setText(text);
+		element.setDescription(description);
+		element.setPathToElement(path);
+		return element;
+	}
 	
 	FailedElement prepareFailedElement(String type, String text, String description, File file) {
 		FailedElement element = new FailedElement();
