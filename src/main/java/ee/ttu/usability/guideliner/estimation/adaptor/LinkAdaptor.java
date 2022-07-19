@@ -206,7 +206,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 //				System.out.println("---------------------------------");
 				File file = screenshoter.takeScreenshot(screenshot.get(), el.getValue().webElement, driver);
 				result.getFailedElements().add(prepareFailedElement(
-						ElementType.LINK.name(), el.getKey(),errorMessage, NO_IMAGE));
+						ElementType.LINK, el.getKey(),errorMessage, NO_IMAGE));
 			}
 		}
 		return setSuccessFlag(result);
