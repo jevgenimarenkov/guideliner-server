@@ -68,7 +68,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 					Integer amountOfUnit = getAmountOfUnit(text, page.getUnit());
 					if (amountOfUnit > page.getContentLength()) {
 						File file = screenshoter.takeScreenshot(screenshot.get(), el, driver);
-						 result.getFailedElements().add(prepareFailedElement(ElementType.PARAGRAPH.name(), ElementType.PARAGRAPH.name()
+						 result.getFailedElements().add(prepareFailedElement(ElementType.PARAGRAPH, ElementType.PARAGRAPH.name()
 								 , "Paragraph contains more words then exepcted: " + amountOfUnit , file.getName()));
 						 result.setElementType(ElementType.NUMBERED_LIST);
 					}
