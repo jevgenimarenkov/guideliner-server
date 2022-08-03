@@ -346,7 +346,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 						finish = matcher.end() + 15;
 					}
 					String textWithMultipleSpaces = text.substring(start, finish);
-					result.getFailedElements().add(prepareFailedElement("UI Page text", textWithMultipleSpaces, "Text contains multiple spaces" , NO_IMAGE));
+					result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, textWithMultipleSpaces, "Text contains multiple spaces" , NO_IMAGE));
 				}
 			});
 			return setSuccessFlag(result);
