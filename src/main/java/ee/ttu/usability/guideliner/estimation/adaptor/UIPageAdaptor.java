@@ -289,7 +289,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			String entireText = el.getText();
 			for (String element : page.getProhibitedWords().getValue().split(",")) {
 				if (entireText.contains(element)) {
-					 result.getFailedElements().add(prepareFailedElement("UI Page", "Whole page", "The word " + element + "is not allowed" , NO_IMAGE));
+					 result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "Whole page", "The word " + element + "is not allowed" , NO_IMAGE));
 					 result.setElementType(ElementType.PAGE);
 				}
 			}
