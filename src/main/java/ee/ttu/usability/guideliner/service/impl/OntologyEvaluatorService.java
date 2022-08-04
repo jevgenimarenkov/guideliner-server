@@ -398,7 +398,6 @@ public class OntologyEvaluatorService {
 		}
 
 		throw new RuntimeException("Cannot find adaptor for " + guidelineElement.getClass());
-		//	driver.close();
 	}
 
 	public static <T extends AbstractAdaptor> EvaluationResult Execute(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
@@ -408,8 +407,6 @@ public class OntologyEvaluatorService {
 			return adaptor.execute(guidelineElement);
 		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
 			throw new RuntimeException("Could not instantiate the class", e);
-		} catch (InvocationTargetException e) {
-			throw new RuntimeException(e);
 		}
 	}
 
