@@ -703,7 +703,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		List<WebElement> findElements = driver.findElements(By.tagName("title"));
 		
 		if (findElements.size() == 0) {
-			result.getFailedElements().add(prepareFailedElement("Title tag", "", "Title tag does not exist.", NO_IMAGE));
+			result.getFailedElements().add(prepareFailedElement(ElementType.TITLE, "", "Title tag does not exist.", NO_IMAGE));
 			return setSuccessFlag(result);
 		}
 		
