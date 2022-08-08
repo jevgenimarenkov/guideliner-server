@@ -403,12 +403,12 @@ public class OntologyEvaluatorService {
 		//	driver.close();
 	}
 
-	public static <T extends AbstractAdaptor> T createInstance(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
+	public static <T extends AbstractAdaptor> T CreateInstance(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
 		try {
 			// Use reflection to instantiate the class represented by clazz
 			var adaptor = clazz.getDeclaredConstructor().newInstance();
 			adaptor.setDriver(driver);
-			adaptor.execute(guidelineElement);
+			return adaptor.execute(guidelineElement);
 		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException e) {
 			// Handle the potential exceptions (e.g., no accessible no-argument constructor, class represents an abstract class, etc.)
 			throw new RuntimeException("Could not instantiate the class", e);
