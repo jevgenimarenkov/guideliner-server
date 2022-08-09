@@ -626,7 +626,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 			if (findElements.size() == 0) {
 				result.getFailedElements()
-						.add(prepareFailedElement("Html tag", "", "Html tag does not exist.", NO_IMAGE));
+						.add(prepareFailedElement(ElementType.TAG, "", "Html tag does not exist.", NO_IMAGE));
 				return setSuccessFlag(result);
 			}
 
