@@ -3,6 +3,7 @@ package ee.ttu.usability.guideliner.rest;
 import ee.ttu.usability.guideliner.Kristi2Repository;
 import ee.ttu.usability.guideliner.TestRepository;
 import ee.ttu.usability.guideliner.TotalTimeRepository;
+import ee.ttu.usability.guideliner.domain.guideline.Category;
 import ee.ttu.usability.guideliner.estimation.result.OtherResult;
 import ee.ttu.usability.guideliner.estimation.result.TimeUrlEvaluiation;
 import ee.ttu.usability.guideliner.repository.OntologyRepository;
@@ -152,7 +153,7 @@ public class UsabilityEvaluationController {
     @RequestMapping("/usability/enormous-evaluation")
     public List<EvaluationResult> performEnormouseEvlauation(String webURL) {
 
-        List<EvaluationResult> wcagGuideline = evaluatorService.evaluate("WCAGGuideline", webURL);
+        List<EvaluationResult> wcagGuideline = evaluatorService.evaluate(Category.WCAGGuideline, webURL);
         wcagGuideline.forEach(t -> testRepository.save(t));
         return null;
     }
