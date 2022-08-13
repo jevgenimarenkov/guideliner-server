@@ -402,6 +402,16 @@ public class OntologyEvaluatorService {
 		//	driver.close();
 	}
 
+	public static <T> T createInstance(Class<T> clazz) {
+		try {
+			// Use reflection to instantiate the class represented by clazz
+			return clazz.getDeclaredConstructor().newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			// Handle the potential exceptions (e.g., no accessible no-argument constructor, class represents an abstract class, etc.)
+			throw new RuntimeException("Could not instantiate the class", e);
+		}
+	}
+
 	public WebDriver initialiseDriver() {
 		// TODO add some logic
 //		FirefoxProfile ffprofile = new FirefoxProfile();
