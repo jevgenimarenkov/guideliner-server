@@ -105,7 +105,7 @@ public class OntologyEvaluatorService {
 		final AtomicBoolean ffff = new AtomicBoolean(false);
 		WebDriver finalDriver = driver;
 
-		OntologyRepository.reasoner.getSubClasses(ontologyRepository.loadClass(category))
+		OntologyRepository.reasoner.getSubClasses(ontologyRepository.loadClass(category.name()))
 				.entities()
 				.filter(c -> !c.getIRI().getShortForm().equals("Nothing"))
 				.forEach(c -> {
