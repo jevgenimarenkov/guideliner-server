@@ -6,6 +6,7 @@ import ee.ttu.usability.guideliner.domain.element.link.*;
 import ee.ttu.usability.guideliner.domain.element.link.Button;
 import ee.ttu.usability.guideliner.domain.element.link.Frame;
 import ee.ttu.usability.guideliner.domain.element.link.Object;
+import ee.ttu.usability.guideliner.domain.guideline.Category;
 import ee.ttu.usability.guideliner.estimation.adaptor.*;
 import ee.ttu.usability.guideliner.estimation.result.Guideline;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
@@ -76,7 +77,7 @@ public class OntologyEvaluatorService {
 	}
 
 	private Screenshoter screenshoter = new Screenshoter();
-	public List<EvaluationResult>  evaluate(String category, String url) {
+	public List<EvaluationResult>  evaluate(Category category, String url) {
 		List<EvaluationResult> results = new ArrayList<>();
 
 		WebDriver driver = null;
