@@ -9,6 +9,8 @@ import java.util.StringTokenizer;
 
 import ee.ttu.usability.guideliner.domain.attribute.AlternativeText;
 import ee.ttu.usability.guideliner.domain.dataproperty.Unit;
+import ee.ttu.usability.guideliner.domain.element.UsabilityGuideline;
+import ee.ttu.usability.guideliner.domain.element.link.TableHeader;
 import ee.ttu.usability.guideliner.estimation.result.ElementType;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
 import lombok.Data;
@@ -35,6 +37,10 @@ public class AbstractAdaptor {
 	protected WebDriver driver;
 	
 	protected Optional<BufferedImage> screenshot = Optional.empty();
+
+//	public EvaluationResult execute(UsabilityGuideline applet) {
+//
+//	}
 
 	protected Integer getAmountOfUnit(String string, Unit unit) {
 		if (string == null || unit == null) {
