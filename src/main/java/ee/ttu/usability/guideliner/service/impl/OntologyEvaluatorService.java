@@ -407,7 +407,6 @@ public class OntologyEvaluatorService {
 			adaptor.setDriver(driver);
 			return adaptor.execute(guidelineElement);
 		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException e) {
-			// Handle the potential exceptions (e.g., no accessible no-argument constructor, class represents an abstract class, etc.)
 			throw new RuntimeException("Could not instantiate the class", e);
 		} catch (InvocationTargetException e) {
 			throw new RuntimeException(e);
