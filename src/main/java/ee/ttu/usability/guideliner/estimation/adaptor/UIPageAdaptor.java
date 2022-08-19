@@ -177,7 +177,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		if (!scrollY.equals(new Long(0)) && !scrollX.equals(new Long(0))) {
 			String description = "Both vertical and horizontal scroll exist on the page. Only one should exist.";
-			result.getFailedElements().add(prepareFailedElement("UI Page", "Web Page", description, NO_IMAGE));
+			result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "Web Page", description, NO_IMAGE));
 			result.setElementType(ElementType.PAGE);
 			result.setResult(ResultType.FAIL);
 			result.setDescription(description);
