@@ -676,7 +676,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 				}
 			} catch (NoSuchElementException ex) {
 				result.getFailedElements()
-						.add(prepareFailedElement(ElementType.PAGE.name(), "", "Viewport is not defined.", NO_IMAGE));
+						.add(prepareFailedElement(ElementType.PAGE, "", "Viewport is not defined.", NO_IMAGE));
 			}
 		}
 		return setSuccessFlag(result);
