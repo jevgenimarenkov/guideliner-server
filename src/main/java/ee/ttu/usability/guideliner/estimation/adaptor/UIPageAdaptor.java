@@ -635,7 +635,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 			if (!langElement.isPresent()) {
 				result.getFailedElements()
-						.add(prepareFailedElement("Lang attribute of HTML tag", "", "Lang is not defined", NO_IMAGE));
+						.add(prepareFailedElement(ElementType.TAG, "", "Lang is not defined", NO_IMAGE));
 			}
 			return setSuccessFlag(result);
 
