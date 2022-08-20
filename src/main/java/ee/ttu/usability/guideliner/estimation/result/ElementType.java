@@ -27,5 +27,6 @@ public enum ElementType {
 	OBJECT,
 	HEADER,
 	RADIO,
-	TAG, TITLE,
+	TAG,
+	TITLE,
 }
