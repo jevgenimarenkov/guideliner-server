@@ -406,7 +406,7 @@ public class OntologyEvaluatorService {
 			var adaptor = clazz.getDeclaredConstructor().newInstance();
 			adaptor.setDriver(driver);
 			return adaptor.execute(guidelineElement);
-		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException e) {
+		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
 			throw new RuntimeException("Could not instantiate the class", e);
 		} catch (InvocationTargetException e) {
 			throw new RuntimeException(e);
