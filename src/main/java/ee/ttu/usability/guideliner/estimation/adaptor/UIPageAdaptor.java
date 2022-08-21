@@ -152,7 +152,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			Integer amountOfUnits = getAmountOfUnit(el.getText(), page.getUnit());			
 			 if (amountOfUnits > page.getContentLength()) {
 				 String description = "Amount of " + page.getUnit() + " was " + amountOfUnits;
-				 result.getFailedElements().add(prepareFailedElement("UI Page", "Home page", description, NO_IMAGE));
+				 result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "Home page", description, NO_IMAGE));
 					
 				 result.setElementType(ElementType.PAGE);
 				 result.setResult(ResultType.FAIL);
