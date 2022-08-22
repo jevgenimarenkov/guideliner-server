@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-public class AbstractAdaptor {
+public abstract class AbstractAdaptor {
 
 	protected Screenshoter screenshoter = new Screenshoter();
 
