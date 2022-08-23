@@ -403,7 +403,7 @@ public class OntologyEvaluatorService {
 		//	driver.close();
 	}
 
-	public static <T extends AbstractAdaptor> T CreateInstance(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
+	public static <T extends AbstractElement> EvaluationResult CreateInstance(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
 		try {
 			// Use reflection to instantiate the class represented by clazz
 			var adaptor = clazz.getDeclaredConstructor().newInstance();
