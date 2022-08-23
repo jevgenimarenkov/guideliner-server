@@ -656,7 +656,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			if (null == link)
 				link = e.getAttribute("src");
 			if (driver.getCurrentUrl().equals(link.equals(page.getHref().getValue()))) {
-				result.getFailedElements().add(prepareFailedElement("UI Page", "",
+				result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "",
 						"Page contains link to itself.", NO_IMAGE));
 			}
 		}
