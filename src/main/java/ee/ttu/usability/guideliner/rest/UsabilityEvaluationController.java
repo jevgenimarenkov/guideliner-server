@@ -159,21 +159,21 @@ public class UsabilityEvaluationController {
     }
 
     @RequestMapping("/usability/evaluation/{category}")
-    public List<EvaluationResult> evaluateByCategory(@PathVariable("category") String category,
+    public List<EvaluationResult> evaluateByCategory(@PathVariable("category") Category category,
                                                      @RequestParam(value="url", defaultValue="http://www.etis.ee") String webURL) throws InterruptedException, ExecutionException {
-        if (category.equals("AllGuidelines")) {
+        if (category.equals(Category.AllGuidelines)) {
             ExecutorService executor = Executors.newFixedThreadPool(3);
 
             Callable<List<EvaluationResult>> WCAGGuideline = () -> {
-                return evaluatorService.evaluate("WCAGGuideline", webURL);
+                return evaluatorService.evaluate(Category.WCAGGuideline, webURL);
             };
 
             Callable<List<EvaluationResult>> UsabilityGuideline = () -> {
-                return evaluatorService.evaluate("UsabilityGuideline", webURL);
+                return evaluatorService.evaluate(Category.UsabilityGuideline, webURL);
             };
 
             Callable<List<EvaluationResult>> MobileUsabilityGuideline = () -> {
-                return evaluatorService.evaluate("MobileUsabilityGuideline", webURL);
+                return evaluatorService.evaluate(Category.MobileUsabilityGuideline, webURL);
             };
 
             List<Future<List<EvaluationResult>>> futureInsurerQuotes = executor.invokeAll(Arrays.asList(WCAGGuideline,UsabilityGuideline,MobileUsabilityGuideline));
