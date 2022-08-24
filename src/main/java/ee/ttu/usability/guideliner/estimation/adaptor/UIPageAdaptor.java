@@ -689,7 +689,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		if (driver.getPageSource().contains("embedSWF")) {
 			result.getFailedElements()
-					.add(prepareFailedElement(ElementType.PAGE.name(), "", "Flash is not allowed for mobile device..", NO_IMAGE));
+					.add(prepareFailedElement(ElementType.PAGE, "", "Flash is not allowed for mobile device..", NO_IMAGE));
 		}
 
 		return setSuccessFlag(result);
