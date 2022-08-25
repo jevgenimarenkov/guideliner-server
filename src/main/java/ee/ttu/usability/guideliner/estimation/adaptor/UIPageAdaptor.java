@@ -672,7 +672,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 				WebElement viewportElement = driver.findElement(By.xpath("//meta[@name='viewport']"));
 				if (StringUtils.isNotEmpty(viewportElement.getText())) {
 					result.getFailedElements()
-							.add(prepareFailedElement(ElementType.PAGE.name(), "", "Viewport is empty.", NO_IMAGE));
+							.add(prepareFailedElement(ElementType.PAGE, "", "Viewport is empty.", NO_IMAGE));
 				}
 			} catch (NoSuchElementException ex) {
 				result.getFailedElements()
