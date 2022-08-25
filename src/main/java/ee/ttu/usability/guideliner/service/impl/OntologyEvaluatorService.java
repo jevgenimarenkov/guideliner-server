@@ -81,7 +81,7 @@ public class OntologyEvaluatorService {
 		List<EvaluationResult> results = new ArrayList<>();
 
 		WebDriver driver = null;
-		if ("MobileUsabilityGuideline".equals(category)) {
+		if (Category.MobileUsabilityGuideline.equals(category)) {
 			driver = this.initializeForMobile();
 		} else {
 			driver = this.initialiseDriver();

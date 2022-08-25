@@ -224,7 +224,7 @@ public class UsabilityEvaluationController {
 
     @Transactional
     public void evaluate(String URL) throws ExecutionException, InterruptedException {
-        List<EvaluationResult> allGuidelines = evaluateByCategory("AllGuidelines", URL);
+        List<EvaluationResult> allGuidelines = evaluateByCategory(Category.AllGuidelines, URL);
 //        List<EvaluationResult> guidelines = evaluatorService.evaluate("WcagGuideline", "https://www.etis.ee/Portal/Projects/Index?searchType=detailed");
 //        allGuidelines.forEach(t -> testRepository.save(t));
     }
