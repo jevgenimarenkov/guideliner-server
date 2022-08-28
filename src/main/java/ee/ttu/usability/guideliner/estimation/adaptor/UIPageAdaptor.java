@@ -606,7 +606,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			imgs.forEach(t -> {
 				String altText = t.getAttribute("alt");
 				if (exiustingIds.contains(altText)) {
-					result.getFailedElements().add(prepareFailedElement("Alternative text",
+					result.getFailedElements().add(prepareFailedElement(ElementType.ALTERNATIVE_TEXT,
 							t.getAttribute("outerHTML"), "Alternative text should be unique", NO_IMAGE));
 				} else {
 					exiustingIds.add(altText);
