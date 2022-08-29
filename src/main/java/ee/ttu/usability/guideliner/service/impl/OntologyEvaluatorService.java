@@ -408,6 +408,7 @@ public class OntologyEvaluatorService {
 			// Use reflection to instantiate the class represented by clazz
 			var adaptor = clazz.getDeclaredConstructor().newInstance();
 			adaptor.setDriver(driver);
+			adaptor.execute((TableHeader) guidelineElement)
 		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException e) {
 			// Handle the potential exceptions (e.g., no accessible no-argument constructor, class represents an abstract class, etc.)
 			throw new RuntimeException("Could not instantiate the class", e);
