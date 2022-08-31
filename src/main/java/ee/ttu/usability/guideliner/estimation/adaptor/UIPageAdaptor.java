@@ -727,7 +727,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		List<WebElement> input = getInputs(driver);
 		if (input.size() > page.getMaxNumberOfInputs()) {
-			result.getFailedElements().add(prepareFailedElement("UI Page", "", "The expected amount of inputs exceeded. Actual number: " + input.size() + " Expected number:" + page.getMaxNumberOfInputs(), NO_IMAGE));
+			result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "", "The expected amount of inputs exceeded. Actual number: " + input.size() + " Expected number:" + page.getMaxNumberOfInputs(), NO_IMAGE));
 		}
 
 		return setSuccessFlag(result);
