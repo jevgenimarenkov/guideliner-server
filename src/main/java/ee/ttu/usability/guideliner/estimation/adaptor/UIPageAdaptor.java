@@ -28,6 +28,10 @@ import static ee.ttu.usability.guideliner.service.impl.OntologyEvaluatorService.
 
 @Slf4j
 public class UIPageAdaptor extends AbstractAdaptor {
+	@Override
+	public EvaluationResult execute(UsabilityGuideline guideline) {
+		return null;
+	}
 
 	public EvaluationResult execute(UIPage page) throws IOException {
 		LocalDateTime startTime2 = LocalDateTime.now();
