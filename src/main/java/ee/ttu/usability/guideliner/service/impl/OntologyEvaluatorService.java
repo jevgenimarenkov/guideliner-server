@@ -373,6 +373,14 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof Applet) {
 				try {
+					return Execute(AppletAdaptor.class, driver, (Applet) guidelineElement);
+				} catch (Exception ex) {
+					throw  ex;
+				}
+			}
+
+			if (guidelineElement instanceof Applet) {
+				try {
 					AppletAdaptor adaptor = new AppletAdaptor();
 					adaptor.setDriver(driver);
 					return adaptor.execute((Applet) guidelineElement);
