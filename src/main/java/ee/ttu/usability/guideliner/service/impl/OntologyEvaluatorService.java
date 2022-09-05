@@ -402,11 +402,14 @@ public class OntologyEvaluatorService {
 
 	public static <T extends AbstractAdaptor> EvaluationResult Execute(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
 		try {
+
 			var adaptor = clazz.getDeclaredConstructor().newInstance();
 			adaptor.setDriver(driver);
 			return adaptor.execute(guidelineElement);
 		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
 			throw new RuntimeException("Could not instantiate the class", e);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
 		}
 	}
 

@@ -38,7 +38,7 @@ public abstract class AbstractAdaptor<T extends UsabilityGuideline> {
 	
 	protected Optional<BufferedImage> screenshot = Optional.empty();
 
-	public  abstract EvaluationResult execute(T applet);
+	public  abstract EvaluationResult execute(T applet) throws IOException;
 
 	protected Integer getAmountOfUnit(String string, Unit unit) {
 		if (string == null || unit == null) {
