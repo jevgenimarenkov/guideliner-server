@@ -4,6 +4,7 @@ import ee.ttu.usability.guideliner.domain.attribute.AlternativeText;
 import ee.ttu.usability.guideliner.domain.element.link.Applet;
 import ee.ttu.usability.guideliner.domain.element.link.Link;
 import ee.ttu.usability.guideliner.domain.element.link.TableHeader;
+import ee.ttu.usability.guideliner.domain.page.UIPage;
 import ee.ttu.usability.guideliner.estimation.result.ElementType;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
@@ -17,7 +18,7 @@ import java.io.IOException;
 
 @Slf4j
 @Service("TableHeaderAdaptor")
-public class TableHeaderAdaptor extends AbstractAdaptor {
+public class TableHeaderAdaptor extends AbstractAdaptor<TableHeader>  {
 
 	public EvaluationResult execute(TableHeader applet) throws IOException {
 		if (BooleanUtils.isTrue(applet.getHasText())) {
