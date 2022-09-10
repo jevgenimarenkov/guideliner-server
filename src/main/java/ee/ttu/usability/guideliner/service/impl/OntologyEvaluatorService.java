@@ -166,7 +166,7 @@ public class OntologyEvaluatorService {
 				try {
 					UIPageAdaptor adaptor = new UIPageAdaptor();
 					adaptor.setDriver(driver);
-					return adaptor.execute((UIPage) guidelineElement);
+					return Execute(UIPageAdaptor.class, driver, guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
 				}
@@ -402,7 +402,6 @@ public class OntologyEvaluatorService {
 
 	public static <T extends AbstractAdaptor> EvaluationResult Execute(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
 		try {
-
 			var adaptor = clazz.getDeclaredConstructor().newInstance();
 			adaptor.setDriver(driver);
 			return adaptor.execute(guidelineElement);
