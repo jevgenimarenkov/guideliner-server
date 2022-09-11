@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-public abstract class AbstractAdaptor {
+public abstract class AbstractAdaptor<T extends UsabilityGuideline> {
 
 	protected Screenshoter screenshoter = new Screenshoter();
 
