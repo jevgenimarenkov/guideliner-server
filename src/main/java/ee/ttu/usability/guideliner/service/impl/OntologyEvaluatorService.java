@@ -384,10 +384,7 @@ public class OntologyEvaluatorService {
 					AppletAdaptor adaptor = new AppletAdaptor();
 					adaptor.setDriver(driver);
 					return adaptor.execute((Applet) guidelineElement);
-				} catch (Exception ex) {
-					throw  ex;
-				}
-			}
+
 
 			if (guidelineElement instanceof TableHeader) {
 				try {
