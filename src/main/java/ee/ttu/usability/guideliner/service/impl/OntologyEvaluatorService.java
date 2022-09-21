@@ -363,7 +363,7 @@ public class OntologyEvaluatorService {
 
             if (guidelineElement instanceof Object) {
                 try {
-                    return Execute(ObjectAdaptor.class, driver, (Applet) guidelineElement);
+                    return Execute(ObjectAdaptor.class, driver, (Object) guidelineElement);
                 } catch (Exception ex) {
                     throw  ex;
                 }
