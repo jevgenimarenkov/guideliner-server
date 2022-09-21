@@ -379,8 +379,6 @@ public class OntologyEvaluatorService {
 				}
 			}
 
-			if (guidelineElement instanceof Applet) {
-
 
 			if (guidelineElement instanceof TableHeader) {
 				try {
