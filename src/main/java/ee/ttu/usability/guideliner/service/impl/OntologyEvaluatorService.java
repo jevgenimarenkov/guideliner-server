@@ -361,6 +361,7 @@ public class OntologyEvaluatorService {
 				}
 			}
 
+
 			if (guidelineElement instanceof Object) {
 				try {
 					ObjectAdaptor adaptor = new ObjectAdaptor();
