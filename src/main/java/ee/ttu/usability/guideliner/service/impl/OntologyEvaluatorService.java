@@ -165,7 +165,6 @@ public class OntologyEvaluatorService {
 			if (guidelineElement instanceof UIPage) {
 				try {
 					UIPageAdaptor adaptor = new UIPageAdaptor();
-					adaptor.setDriver(driver);
 					return Execute(UIPageAdaptor.class, driver, guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
