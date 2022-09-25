@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @Slf4j
 @Service("ObjectAdaptor")
-public class ObjectAdaptor extends AbstractAdaptor {
+public class ObjectAdaptor extends AbstractAdaptor<Object> {
 
 	public EvaluationResult execute(Object applet) throws IOException {
 		if (applet.getAlternativeText() != null) {

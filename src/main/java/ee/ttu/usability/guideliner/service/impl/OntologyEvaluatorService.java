@@ -369,7 +369,6 @@ public class OntologyEvaluatorService {
                 }
             }
 
-
 			if (guidelineElement instanceof Applet) {
 				try {
 					return Execute(AppletAdaptor.class, driver, (Applet) guidelineElement);
