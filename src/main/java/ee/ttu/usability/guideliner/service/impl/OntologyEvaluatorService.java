@@ -379,7 +379,6 @@ public class OntologyEvaluatorService {
 				}
 			}
 
-
 			if (guidelineElement instanceof TableHeader) {
 				try {
 					return Execute(TableHeaderAdaptor.class, driver, (TableHeader) guidelineElement);
