@@ -164,7 +164,6 @@ public class OntologyEvaluatorService {
 		try {
 			if (guidelineElement instanceof UIPage) {
 				try {
-					UIPageAdaptor adaptor = new UIPageAdaptor();
 					return Execute(UIPageAdaptor.class, driver, guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
@@ -384,7 +383,7 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof TableHeader) {
 				try {
-					return Execute(TableHeaderAdaptor.class, driver, guidelineElement);
+					return Execute(TableHeaderAdaptor.class, driver, (TableHeader) guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
 				}
@@ -399,11 +398,11 @@ public class OntologyEvaluatorService {
 		throw new RuntimeException("Cannot find adaptor for " + guidelineElement.getClass());
 	}
 
-	public static <T extends AbstractAdaptor> EvaluationResult Execute(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
+	public static <T extends AbstractAdaptor, K extends UsabilityGuideline> EvaluationResult Execute(Class<T> clazz, WebDriver driver, K guidelineElement ) {
 		try {
 			var adaptor = clazz.getDeclaredConstructor().newInstance();
 			adaptor.setDriver(driver);
-			return adaptor.execute(guidelineElement);
+			return adaptor.execute((K)guidelineElement);
 		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
 			throw new RuntimeException("Could not instantiate the class", e);
 		} catch (IOException e) {
