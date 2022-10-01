@@ -365,7 +365,6 @@ public class OntologyEvaluatorService {
 					adaptor.setDriver(driver);
 					return adaptor.execute((Embed) guidelineElement);
 				} catch (Exception ex) {
-					throw  ex;
 
 
 
