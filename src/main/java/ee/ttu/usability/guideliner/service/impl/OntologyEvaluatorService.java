@@ -346,7 +346,6 @@ public class OntologyEvaluatorService {
 					return adaptor.execute((Select) guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
-				}
 
 
 			if (guidelineElement instanceof Frame) {
