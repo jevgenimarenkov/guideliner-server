@@ -331,6 +331,8 @@ public class OntologyEvaluatorService {
 				}
 			}
 
+
+
 			if (guidelineElement instanceof Select) {
 				try {
 					SelectAdaptor adaptor = new SelectAdaptor();
@@ -358,12 +360,6 @@ public class OntologyEvaluatorService {
 					throw  ex;
 				}
 			}
-
-
-
-
-
-
 
             if (guidelineElement instanceof Object) {
                 try {
