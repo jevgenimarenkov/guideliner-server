@@ -341,7 +341,6 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof Select) {
 				try {
-					SelectAdaptor adaptor = new SelectAdaptor();
 
 
 
