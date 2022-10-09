@@ -331,7 +331,13 @@ public class OntologyEvaluatorService {
 				}
 			}
 
-
+			if (guidelineElement instanceof Embed) {
+				try {
+					return Execute(EmbedAdaptor.class, driver, (Embed) guidelineElement);
+				} catch (Exception ex) {
+					throw  ex;
+				}
+			}
 
 			if (guidelineElement instanceof Select) {
 				try {
