@@ -342,7 +342,6 @@ public class OntologyEvaluatorService {
 
 
 
-
 			if (guidelineElement instanceof Frame) {
 				try {
 					FrameAdaptor adaptor = new FrameAdaptor();
