@@ -345,7 +345,7 @@ public class OntologyEvaluatorService {
 					adaptor.setDriver(driver);
 					return adaptor.execute((Select) guidelineElement);
 				} catch (Exception ex) {
-					throw  ex;
+
 
 
 			if (guidelineElement instanceof Frame) {
