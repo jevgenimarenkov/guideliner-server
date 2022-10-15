@@ -363,7 +363,6 @@ public class OntologyEvaluatorService {
 				try {
 					EmbedAdaptor adaptor = new EmbedAdaptor();
 					adaptor.setDriver(driver);
-					return adaptor.execute((Embed) guidelineElement);
 
 
 
