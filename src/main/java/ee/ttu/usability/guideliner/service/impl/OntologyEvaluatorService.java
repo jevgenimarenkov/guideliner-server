@@ -366,7 +366,7 @@ public class OntologyEvaluatorService {
 					return adaptor.execute((Embed) guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
-				}
+
 
 
             if (guidelineElement instanceof Object) {
