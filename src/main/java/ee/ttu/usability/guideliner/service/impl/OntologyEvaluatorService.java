@@ -347,7 +347,7 @@ public class OntologyEvaluatorService {
 				} catch (Exception ex) {
 					throw  ex;
 				}
-			}
+
 
 			if (guidelineElement instanceof Frame) {
 				try {
