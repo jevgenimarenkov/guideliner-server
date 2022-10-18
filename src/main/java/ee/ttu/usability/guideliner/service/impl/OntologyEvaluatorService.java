@@ -343,7 +343,6 @@ public class OntologyEvaluatorService {
 				try {
 					SelectAdaptor adaptor = new SelectAdaptor();
 					adaptor.setDriver(driver);
-					return adaptor.execute((Select) guidelineElement);
 
 
 
