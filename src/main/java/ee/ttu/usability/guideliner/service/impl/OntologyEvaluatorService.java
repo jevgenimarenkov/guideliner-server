@@ -339,7 +339,7 @@ public class OntologyEvaluatorService {
 				}
 			}
 
-			if (guidelineElement instanceof Select) {
+
 
 
 
