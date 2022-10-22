@@ -331,7 +331,7 @@ public class OntologyEvaluatorService {
 				}
 			}
 
-			if (guidelineElement instanceof Embed) {
+			if (guidelineElement instanceof Select) {
 				try {
 					return Execute(EmbedAdaptor.class, driver, (Embed) guidelineElement);
 				} catch (Exception ex) {
