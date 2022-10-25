@@ -361,7 +361,7 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof Embed) {
 				try {
-					EmbedAdaptor adaptor = new EmbedAdaptor();
+
 
 
 
