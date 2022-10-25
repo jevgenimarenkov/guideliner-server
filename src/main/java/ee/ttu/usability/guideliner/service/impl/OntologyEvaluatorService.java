@@ -359,7 +359,7 @@ public class OntologyEvaluatorService {
 				}
 			}
 
-			if (guidelineElement instanceof Embed) {
+
 
 
 
