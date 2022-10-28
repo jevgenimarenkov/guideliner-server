@@ -333,7 +333,7 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof Select) {
 				try {
-					return Execute(EmbedAdaptor.class, driver, (Select) guidelineElement);
+					return Execute(SelectAdaptor.class, driver, (Select) guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
 				}
