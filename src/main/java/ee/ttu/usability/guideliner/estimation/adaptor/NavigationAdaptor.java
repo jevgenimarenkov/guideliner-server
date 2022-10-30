@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.estimation.result.FailedElement;
 
-public class NavigationAdaptor extends AbstractAdaptor {
+public class NavigationAdaptor extends AbstractAdaptor<Navigation> {
 
 	
 	public EvaluationResult execute(Navigation link) throws IOException {
