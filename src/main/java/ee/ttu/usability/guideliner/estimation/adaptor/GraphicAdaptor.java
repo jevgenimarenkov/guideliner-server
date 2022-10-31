@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Slf4j
-public class GraphicAdaptor extends AbstractAdaptor {
+public class GraphicAdaptor extends AbstractAdaptor<Graphic> {
 	
 	public EvaluationResult execute(Graphic graphic) throws IOException {
 		if (graphic.getContentLength() != null) {
