@@ -11,7 +11,7 @@ import ee.ttu.usability.guideliner.estimation.result.ElementType;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.domain.element.link.Multimedia;
 
-public class MultimediaAdaptor extends AbstractAdaptor {
+public class MultimediaAdaptor extends AbstractAdaptor<Multimedia> {
 
 	public EvaluationResult execute(Multimedia el) throws IOException {
 		if (el.getAlternativeText() != null) {
