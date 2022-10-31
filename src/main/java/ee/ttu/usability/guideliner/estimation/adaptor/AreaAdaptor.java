@@ -12,7 +12,7 @@ import ee.ttu.usability.guideliner.domain.element.link.Area;
 import ee.ttu.usability.guideliner.estimation.result.ElementType;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 
-public class AreaAdaptor extends AbstractAdaptor {
+public class AreaAdaptor extends AbstractAdaptor<Area> {
 
 	public EvaluationResult execute(Area area) throws IOException {
 		if (area.getAlternativeText() != null) {
