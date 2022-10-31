@@ -24,7 +24,7 @@ import org.openqa.selenium.WebElement;
 import com.ibm.icu.text.BreakIterator;
 
 @Slf4j
-public class ParagraphAdaptor extends AbstractAdaptor {
+public class ParagraphAdaptor extends AbstractAdaptor<Paragraph> {
 	
 	public EvaluationResult execute(Paragraph paragraph) throws IOException {
 		if (paragraph.getContrast() != null && paragraph.getContrast().getContrast() != null) {
