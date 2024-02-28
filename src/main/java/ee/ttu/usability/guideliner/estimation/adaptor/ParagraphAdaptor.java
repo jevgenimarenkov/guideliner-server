@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 import ee.ttu.usability.guideliner.domain.dataproperty.Unit;
 import ee.ttu.usability.guideliner.domain.element.content.Paragraph;
@@ -66,7 +67,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 					String text = el.getText().trim();
 					Integer amountOfUnit = getAmountOfUnit(text, page.getUnit());
 					if (amountOfUnit > page.getContentLength()) {
-						File file = screenshoter.takeScreenshot(screenshot, el, driver);
+						File file = screenshoter.takeScreenshot(screenshot.get(), el, driver);
 						 result.getFailedElements().add(prepareFailedElement(ElementType.PARAGRAPH.name(), ElementType.PARAGRAPH.name()
 								 , "Paragraph contains more words then exepcted: " + amountOfUnit , file.getName()));
 						 result.setElementType(ElementType.NUMBERED_LIST);
@@ -82,7 +83,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 
 	private EvaluationResult evaluateWordsInSentence(Paragraph page) throws IOException {
 		BreakIterator iterator = BreakIterator.getSentenceInstance(Locale.US);
-		
+
 		screenshot = screenshoter.makeScreenshot(driver);
 		
 		List<FailedElement> failedElements = new ArrayList<FailedElement>();
@@ -135,7 +136,7 @@ public class ParagraphAdaptor extends AbstractAdaptor {
 			}
 		}
 		Logger.Info("Contrast evaluated.");
-		return estimator.estimate(filteredElement, driver, screenshot);
+		return estimator.estimate(filteredElement, driver, screenshot.get());
 	}
 
 	public List<WebElement> getAllElelements(WebDriver driver) {

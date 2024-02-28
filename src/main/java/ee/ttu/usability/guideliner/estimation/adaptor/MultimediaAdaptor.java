@@ -31,7 +31,7 @@ public class MultimediaAdaptor extends AbstractAdaptor {
 			try {
 				String attribute = elem.getAttribute("alt");
 				if (StringUtils.isBlank(attribute)) {
-					result.getFailedElements().add(prepareFailedElement(ElementType.IMAGE.name(), elem.getText(), "Image does not have alternative text" , screenshoter.takeScreenshot(screenshot, elem, driver)));
+					result.getFailedElements().add(prepareFailedElement(ElementType.IMAGE.name(), elem.getText(), "Image does not have alternative text" , screenshoter.takeScreenshot(screenshot.get(), elem, driver)));
 			}
 			} catch (Exception ex) {
 				ex.printStackTrace();

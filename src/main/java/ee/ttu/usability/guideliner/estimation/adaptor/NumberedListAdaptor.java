@@ -33,7 +33,7 @@ public class NumberedListAdaptor extends AbstractAdaptor {
 		for (WebElement el : imgs) {
 			List<WebElement> lis = el.findElements(By.tagName("li"));
 			if (lis.size() <= element.getContentLength()) {
-				File file = screenshoter.takeScreenshot(screenshot, el, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), el, driver);
 				 result.getFailedElements().add(prepareFailedElement("List", "List", "List contains " + lis.size() + " elements" , file));
 				 result.setElementType(ElementType.NUMBERED_LIST);
 			}

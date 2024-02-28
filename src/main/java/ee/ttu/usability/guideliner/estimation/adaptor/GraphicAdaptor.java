@@ -61,7 +61,7 @@ public class GraphicAdaptor extends AbstractAdaptor {
 					failed.setType(ElementType.GRAPHIC.name());
 					failed.setText("Image");
 					failed.setDescription("Expected image size is " + graphic.getContentLength() + ". Actual image has size is : " + kBytes);			
-					File file = screenshoter.takeScreenshot(screenshot, element, driver);
+					File file = screenshoter.takeScreenshot(screenshot.get(), element, driver);
 					failed.setPathToElement(file.getName());
 					failedElements.add(failed);
 				}
@@ -95,7 +95,7 @@ public class GraphicAdaptor extends AbstractAdaptor {
 				if (unit == Unit.FILE_NAME) {
 					prohibitedWord =  getFileName(img.getAttribute("src"));
 					if (UnitAction.DO_NOT_FOLLOW == action && StringUtils.isNotEmpty(prohibitedWord) && prohibitedWord.equals(img.getAttribute("alt"))) {
-						File file = screenshoter.takeScreenshot(screenshot, img, driver);
+						File file = screenshoter.takeScreenshot(screenshot.get(), img, driver);
 						result.getFailedElements().add(prepareFailedElement("UI Page", "Elements with alt attribute", "The word " + prohibitedWord + "  for alternative text is not allowed as it duplicates the file name" , file));
 					}
 				}
@@ -106,7 +106,7 @@ public class GraphicAdaptor extends AbstractAdaptor {
 		imgs.forEach(a -> {
 			String attribute = a.getAttribute("alt");
 			if (StringUtils.isBlank(attribute)) {
-				File file = screenshoter.takeScreenshot(screenshot, a, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), a, driver);
 				result.getFailedElements().add(prepareFailedElement(ElementType.GRAPHIC.name(), a.getText(), "Image does not have alternative text", file));
 			}
 		});

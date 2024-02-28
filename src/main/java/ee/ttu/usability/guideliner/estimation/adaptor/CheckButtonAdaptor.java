@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CheckButtonAdaptor extends AbstractFormAdaptor {
 
@@ -48,8 +49,10 @@ public class CheckButtonAdaptor extends AbstractFormAdaptor {
         for (WebElement radioEl : elements) {
             Point point = radioEl.getLocation();
             if (existsElementByY(point.getY(), radiosWihtCoordinates)) {
-                File file = screenshoter.takeScreenshot(screenshot, radioEl, driver);
-                result.getFailedElements().add(prepareFailedElement(ElementType.CHECKBOX.name(), radioEl.getAttribute("outerHTML"), "Checkbox should be vertically aligned.", file));
+                screenshot.ifPresent(val -> {
+                    File file = screenshoter.takeScreenshot(val, radioEl, driver);
+                    result.getFailedElements().add(prepareFailedElement(ElementType.CHECKBOX.name(), radioEl.getAttribute("outerHTML"), "Checkbox should be vertically aligned.", file));
+                });
             }
             radiosWihtCoordinates.add(point.getY());
         }

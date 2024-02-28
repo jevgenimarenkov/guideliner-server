@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 import javax.imageio.ImageIO;
@@ -26,25 +27,25 @@ public class Screenshoter {
 	protected AtomicLong screenshotCounter = new AtomicLong();
 
 	private static BufferedImage screenshot2 = null;
-	public BufferedImage makeScreenshot(WebDriver driver)
+	public Optional<BufferedImage> makeScreenshot(WebDriver driver)
 			throws IOException {
 		return makeScreenshot(driver, false);
 	}
 
-	public static BufferedImage makeScreenshot(WebDriver driver, boolean makeAnyWay)
+	public static Optional<BufferedImage> makeScreenshot(WebDriver driver, boolean makeAnyWay)
 			throws IOException {
 		if (screenshot2 != null && !makeAnyWay) {
-			return screenshot2;
+			return Optional.of(screenshot2);
 		}
 		try {
 			File screenshot = ((TakesScreenshot) driver)
 					.getScreenshotAs(OutputType.FILE);
 			BufferedImage image = ImageIO.read(screenshot);
 			screenshot2 = image;
-			return image;
+			return Optional.of(image);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			return null;
+			return Optional.empty();
 		}
 	}
 

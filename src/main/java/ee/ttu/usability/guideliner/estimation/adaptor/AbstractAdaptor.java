@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.StringTokenizer;
 
 import ee.ttu.usability.guideliner.domain.attribute.AlternativeText;
@@ -33,7 +34,7 @@ public class AbstractAdaptor {
 	
 	protected WebDriver driver;
 	
-	protected BufferedImage screenshot = null;
+	protected Optional<BufferedImage> screenshot = Optional.empty();
 
 	protected Integer getAmountOfUnit(String string, Unit unit) {
 		if (string == null || unit == null) {

@@ -42,7 +42,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 			try {
 				String attribute = elem.getAttribute("alt");
 				if (StringUtils.isBlank(attribute)) {
-					result.getFailedElements().add(prepareFailedElement(ElementType.IMAGE.name(), "Button", "Button does not have alternative text" , screenshoter.takeScreenshot(screenshot, elem, driver)));
+					result.getFailedElements().add(prepareFailedElement(ElementType.IMAGE.name(), "Button", "Button does not have alternative text" , screenshoter.takeScreenshot(screenshot.get(), elem, driver)));
 
 				}
 			} catch (Exception ex) {
@@ -62,7 +62,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 			elements.forEach(el -> {
 				if (StringUtils.isNotBlank(el.getAttribute("onclick")) && StringUtils.isBlank(el.getAttribute("onkeypress"))) {
 					String text = el.getAttribute("innerHTML");
-					result.getFailedElements().add(prepareFailedElement(ElementType.BUTTON.name(), text, "OnClick should be used with onKeyPress ", screenshoter.takeScreenshot(screenshot, el, driver)));
+					result.getFailedElements().add(prepareFailedElement(ElementType.BUTTON.name(), text, "OnClick should be used with onKeyPress ", screenshoter.takeScreenshot(screenshot.get(), el, driver)));
 				}
 			});
 		}
@@ -83,7 +83,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 			}
 
 			if (button.getWidth().getContentLength() > dimension.getWidth()) {
-				File file = screenshoter.takeScreenshot(screenshot, webButton, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), webButton, driver);
 				result.getFailedElements().add(prepareFailedElement(
 						ElementType.BUTTON.name(), webButton.getText(),"The width of the button is smaller then expected. Expected minimum: "
 								+ button.getWidth().getContentLength() + " actual: " + dimension.getWidth() , file));
@@ -106,7 +106,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 			}
 
 			if (button.getHeight().getContentLength() > webButton.getSize().getHeight()) {
-				File file = screenshoter.takeScreenshot(screenshot, webButton, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), webButton, driver);
 				result.getFailedElements().add(prepareFailedElement(
 						ElementType.BUTTON.name(), webButton.getText(),"The height of the button is smaller then expected. Expected minimum: "
 								+ button.getHeight().getContentLength() + " actual: " + webButton.getSize().getHeight() , file));
@@ -145,7 +145,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 //				System.out.println("---------------------------------");
 //				System.out.println(element.getText());
 //				System.out.println("---------------------------------");
-				File file = screenshoter.takeScreenshot(screenshot, entry.getValue().webElement, driver);
+				File file = screenshoter.takeScreenshot(screenshot.get(), entry.getValue().webElement, driver);
 				result.getFailedElements().add(prepareFailedElement(
 						ElementType.LINK.name(), entry.getKey(),errorMessage, file));
 			}
