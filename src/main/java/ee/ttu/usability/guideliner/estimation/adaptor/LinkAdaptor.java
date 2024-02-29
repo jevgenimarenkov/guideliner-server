@@ -46,7 +46,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 		} else if (link.getHasText() != null && link.getHasText() == true) {
 			return evaluateThatInpuHasText(link);
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	protected EvaluationResult evaluateThatInpuHasText(Link link) {
@@ -195,7 +195,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 
 		for (Map.Entry<String, TopButton> el : topButtomCoordinates.entrySet()) {
 //			System.out.println(element.getText());
-			String errorMessage = isLinkWithBadLocation(el.getKey(), el.getValue(), topButtomCoordinates, link.getDistance().getContentLength());
+			String errorMessage = GetLinkDescription(el.getKey(), el.getValue(), topButtomCoordinates, link.getDistance().getContentLength());
 			if (errorMessage != null) {
 //				System.out.println("---------------------------------");
 //				System.out.println(element.getText());
@@ -205,29 +205,10 @@ public class LinkAdaptor extends AbstractAdaptor {
 						ElementType.LINK.name(), el.getKey(),errorMessage, NO_IMAGE));
 			}
 		}
-//		for (WebElement element : links) {
-//			if (StringUtils.isEmpty(element.getText())) {
-//				continue;
-//			}
-////			System.out.println(element.getText());
-//			String errorMessage = isLinkWithBadLocation(element, topButtomCoordinates, link.getDistance().getContentLength());
-//			if (errorMessage != null) {
-////				System.out.println("---------------------------------");
-////				System.out.println(element.getText());
-////				System.out.println("---------------------------------");
-//				//File file = screenshoter.takeScreenshot(screenshot, element, driver);
-//				result.getFailedElements().add(prepareFailedElement(
-//						ElementType.LINK.name(), element.getText(),errorMessage, NO_IMAGE));
-//			}
-//		}
-
-		// find all links
-		// iterate over all links and finf if there are another link close to it
-
 		return setSuccessFlag(result);
 	}
 
-	private String isLinkWithBadLocation(String text, TopButton element, Map<String, TopButton> elements, Integer distanceBetween) {
+	private String GetLinkDescription(String text, TopButton element, Map<String, TopButton> elements, Integer distanceBetween) {
 		Integer top = element.top;
 		Integer button = element.buttom;
 
@@ -272,7 +253,7 @@ public class LinkAdaptor extends AbstractAdaptor {
 				return "Link: with text " + text + " is very close to " + entry.getKey();
 			}
 		}
-		return null;
+		return "";
 	}
 
 	private EvaluationResult evaluateSameColor(Link link) throws IOException {
@@ -283,7 +264,6 @@ public class LinkAdaptor extends AbstractAdaptor {
 
 		List<WebElement> webLinks = getAllLinks(driver);
 
-		String linkColor = null;
 
 		Map<String, LinkColor> linkColors = new HashMap();
 		System.out.println(LocalDateTime.now());
@@ -302,11 +282,6 @@ public class LinkAdaptor extends AbstractAdaptor {
 			}
 		}
 		System.out.println(LocalDateTime.now());
-//		Map<String, Integer> results = linkColors.entrySet().stream()
-//				.sorted(Map.Entry.comparingByValue(Comparator.naturalOrder()))
-//				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-//						(oldValue, newValue) -> oldValue, LinkedHashMap::new));
-
 		for (Map.Entry<String, LinkColor> entry : linkColors.entrySet()) {
 			if (entry.getValue().count > 3) {
 				File file = screenshoter.takeScreenshot(screenshot.get(), entry.getValue().element, driver);
@@ -347,9 +322,6 @@ public class LinkAdaptor extends AbstractAdaptor {
 		driver.navigate().refresh();
 
 		String mostlyUsedColor = linkColors.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getKey();
-//		System.out.println("Mostly used colot");
-//		System.out.println(mostlyUsedColor);
-//		System.out.println(linkColors.get(mostlyUsedColor));
 
 		int numberOfTrials = 0;
 		int processed = 0;

@@ -17,8 +17,8 @@ public class AreaAdaptor extends AbstractAdaptor {
 	public EvaluationResult execute(Area area) throws IOException {
 		if (area.getAlternativeText() != null) {
 			return evaluateAlternativeText(area);
-		} 
-		return null;
+		}
+		return EvaluationResult.EMPTY_RESULT;
 	}
 	
 	private EvaluationResult evaluateAlternativeText(Area area) throws IOException {

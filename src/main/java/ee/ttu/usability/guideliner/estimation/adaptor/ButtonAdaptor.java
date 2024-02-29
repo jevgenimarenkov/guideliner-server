@@ -28,7 +28,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 		} else if (el.getDistance() != null && el.getDistance().getContentLength() != null && el.getDistance().getDistanceType() != null) {
 			return evaluateDistance(el);
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateAlternativeText(Button el) throws IOException {
@@ -220,7 +220,7 @@ public class ButtonAdaptor extends AbstractAdaptor {
 				return "Element: with html " + element.getKey() + " is very close to " + entry.getKey();
 			}
 		}
-		return null;
+		return "";
 	}
 
 

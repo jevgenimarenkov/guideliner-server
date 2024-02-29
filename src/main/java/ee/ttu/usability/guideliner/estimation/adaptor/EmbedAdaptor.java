@@ -19,7 +19,7 @@ public class EmbedAdaptor extends AbstractAdaptor {
 		if (applet.getAlternativeText() != null) {
 			return evaluateAlternativeText(applet.getAlternativeText());
 		} else {
-			return null;
+			return EvaluationResult.EMPTY_RESULT;
 		}
 	}
 

@@ -92,9 +92,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		if (page.getOnKey() != null && page.getOnDbClick() != null) {
 			return checkThatAttributesAreUsedTogether("onkey", "ondbclick");
 		}
-
-
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 
@@ -336,7 +334,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 				for (int i = 0; i < page.getText().getContentLength(); i++) {
 					space += " ";
 				}
-				Pattern compile = Pattern.compile(space + "+");
+				Pattern compile = Pattern.compile(space + '+');
 				Matcher matcher = compile.matcher(text);				
 				while (matcher.find()) {
 					int start = matcher.start();
@@ -529,14 +527,14 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		if (blink.getIsValued() != null && !blink.getIsValued()) {
 			return  evaluateTagDoesNotExist("blink", "Blink tag", "Blink tag <blink> is not allowed");
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateMarquee(Marquee marquee) {
 		if (marquee.getIsValued() != null && !marquee.getIsValued()) {
 			return  evaluateTagDoesNotExist("marquee", "Marquee tag", "Marquee tag <marquee> is not allowed");
 		}
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateTagAndItsFollowingTags(String firstTag, List<String> nextTags) {
@@ -643,7 +641,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		}
 
-		return null;
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateHref(UIPage page) {

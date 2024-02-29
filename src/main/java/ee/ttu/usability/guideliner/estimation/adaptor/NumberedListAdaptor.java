@@ -19,8 +19,8 @@ public class NumberedListAdaptor extends AbstractAdaptor {
 	public EvaluationResult execute(NumberedList element) throws IOException {
 		if (element.getContentLength()!= null) {
 			return evaluateContentLenght(element);
-		} 
-		return null;
+		}
+		return EvaluationResult.EMPTY_RESULT;
 	}
 
 	private EvaluationResult evaluateContentLenght(NumberedList element) throws IOException {

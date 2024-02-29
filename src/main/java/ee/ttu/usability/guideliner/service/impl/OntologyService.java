@@ -82,12 +82,6 @@ public class OntologyService {
 		return guidelines;
 	}
 
-	public UsabilityGuideline retrieveUsabilityGuidelineByName(String nameOfGuideline) {
-		OWLClass clazz = ontology.loadClass(nameOfGuideline);
-		return null;
-	}
-
-
 	public Guideline createGuideline(OWLClass clazz) {
 		String shortIri = clazz.getIRI().getIRIString().substring(clazz.getIRI().getIRIString().lastIndexOf("#") + 1);
 		Guideline guideline = new Guideline();

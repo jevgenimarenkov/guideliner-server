@@ -24,7 +24,7 @@ public class FormAdaptor extends AbstractAdaptor {
 		if (form.getLabel() != null) {
 			return evaluateExistanceOfLabal(form);
 		} else {
-			return null;
+			return EvaluationResult.EMPTY_RESULT;
 		}
 	}
 

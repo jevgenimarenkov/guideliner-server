@@ -19,8 +19,8 @@ public class NavigationAdaptor extends AbstractAdaptor {
 	public EvaluationResult execute(Navigation link) throws IOException {
 		if (link.getHorizontalScroll() != null) {
 			return evaluateHorizontalScroll(link);
-		} 
-		return null;//footer
+		}
+		return EvaluationResult.EMPTY_RESULT;
 	}
 	
 	private EvaluationResult evaluateHorizontalScroll(Navigation c) {
