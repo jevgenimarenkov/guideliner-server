@@ -1,5 +1,6 @@
 package ee.ttu.usability.guideliner.rest;
 
+import ee.ttu.usability.guideliner.domain.guideline.Category;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.estimation.result.Guideline;
 import ee.ttu.usability.guideliner.service.impl.OntologyService;
@@ -39,8 +40,8 @@ public class UsabilityController {
     }
 
     @RequestMapping("/usability/categories")
-    public List<String> getAllCategories() {
-        return Arrays.asList("AllGuidelines", "WCAGGuideline", "UsabilityGuideline", "MobileUsabilityGuideline");
+    public List<Category> getAllCategories() {
+        return Category.getAllCategories();
     }
 
     @RequestMapping("/usability/categories/{category}")

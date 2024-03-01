@@ -1,5 +1,6 @@
 package ee.ttu.usability.guideliner.service.impl;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -465,25 +466,25 @@ public class GuildelineBuilderService {
 				 } else if ("LoadTime".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 						if (((UIPage) element).getLoadTime() == null)
 							((UIPage) element).setLoadTime(new LoadTime());
-						((UIPage) element).getLoadTime().setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+						((UIPage) element).getLoadTime().setValue(Duration.ofSeconds(Integer.parseInt(dataProperty.getObject().getLiteral())));
 				 } else if ("Text".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 						if (((UIPage) element).getText() == null)
 							((UIPage) element).setText(new Text());
-						((UIPage) element).getText().setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+						((UIPage) element).getText().setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				 } else if ("Width".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					 if (element instanceof Link || element instanceof Button || element instanceof Input) {
 						 if (element.getWidth() == null)
 							 element.setWidth(new Width());
-						 element.getWidth().setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+						 element.getWidth().setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					 }
 				 } else if ("Distance".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					 if (element instanceof Link || element instanceof Button || element instanceof Input) {
 						 if (element.getDistance() == null)
 							 element.setDistance(new Distance());
-						 element.getDistance().setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+						 element.getDistance().setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					 }
 				 } else if ("integer".equals(dataProperty.getObject().getDatatype().getIRI().getShortForm())) {
-					 element.setContentLength(new Integer(dataProperty.getObject().getLiteral()));
+					 element.setContentLength(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				 }
 
 				break;
@@ -496,7 +497,7 @@ public class GuildelineBuilderService {
 				System.out.println(((OWLClassImpl) ent.get()).getIRI().getShortForm());
 				if ("HScroll".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					HorizontalScroll scroll = new HorizontalScroll();
-					scroll.setValue(new Integer(dataProperty.getObject().getLiteral()));
+					scroll.setValue(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					if (element instanceof UIPage) {
 						((UIPage) element).setHorizontalScroll(scroll);
 					} else if (element instanceof Navigation) {
@@ -506,7 +507,7 @@ public class GuildelineBuilderService {
 				}
 				if ("VScroll".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					VerticalScroll scroll = new VerticalScroll();
-					scroll.setValue(new Integer(dataProperty.getObject().getLiteral()));
+					scroll.setValue(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					if (element instanceof UIPage) {
 						((UIPage) element).setVerticalScroll(scroll);
 					}
@@ -716,12 +717,12 @@ public class GuildelineBuilderService {
 			case "hasMaxNumberOfInput" :
 				if ("UIPage".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
 					if (element instanceof UIPage) {
-						((UIPage) element).setMaxNumberOfInputs(new Integer(dataProperty.getObject().getLiteral()));
+						((UIPage) element).setMaxNumberOfInputs(Integer.parseInt(dataProperty.getObject().getLiteral()));
 					}
 				} else if ("CheckBox".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
-					((CheckBox) element).setMaxNumberOfInputs(new Integer(dataProperty.getObject().getLiteral()));
+					((CheckBox) element).setMaxNumberOfInputs(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				} else if ("Radio".equals(((OWLClassImpl) ent.get()).getIRI().getShortForm())) {
-					((Radio) element).setMaxNumberOfInputs(new Integer(dataProperty.getObject().getLiteral()));
+					((Radio) element).setMaxNumberOfInputs(Integer.parseInt(dataProperty.getObject().getLiteral()));
 				}
 				break;
 			case "hasText" :
