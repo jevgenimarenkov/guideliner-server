@@ -50,6 +50,15 @@ public class AbstractAdaptor {
 		}
 	}
 
+	FailedElement prepareFailedElement(ElementType type, String text, String description, String path) {
+		FailedElement element = new FailedElement();
+		element.setType(type.name());
+		element.setText(text);
+		element.setDescription(description);
+		element.setPathToElement(path);
+		return element;
+	}
+
 	FailedElement prepareFailedElement(String type, String text, String description, String path) {
 		FailedElement element = new FailedElement();
 		element.setType(type);
@@ -83,7 +92,7 @@ public class AbstractAdaptor {
 		areas.forEach(a -> {
 			String attribute = a.getAttribute("alt");
 			if (StringUtils.isBlank(attribute)) {
-				result.getFailedElements().add(prepareFailedElement(elementType.name(), a.getAttribute("outerHtml"), tagName + " does not have alternative text", NO_IMAGE));
+				result.getFailedElements().add(prepareFailedElement(elementType, a.getAttribute("outerHtml"), tagName + " does not have alternative text", NO_IMAGE));
 			}
 		});
 
