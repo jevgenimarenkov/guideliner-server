@@ -3,6 +3,7 @@ package ee.ttu.usability.guideliner.rest;
 import ee.ttu.usability.guideliner.Kristi2Repository;
 import ee.ttu.usability.guideliner.TestRepository;
 import ee.ttu.usability.guideliner.TotalTimeRepository;
+import ee.ttu.usability.guideliner.domain.guideline.Category;
 import ee.ttu.usability.guideliner.estimation.result.OtherResult;
 import ee.ttu.usability.guideliner.estimation.result.TimeUrlEvaluiation;
 import ee.ttu.usability.guideliner.repository.OntologyRepository;
@@ -152,27 +153,27 @@ public class UsabilityEvaluationController {
     @RequestMapping("/usability/enormous-evaluation")
     public List<EvaluationResult> performEnormouseEvlauation(String webURL) {
 
-        List<EvaluationResult> wcagGuideline = evaluatorService.evaluate("WCAGGuideline", webURL);
+        List<EvaluationResult> wcagGuideline = evaluatorService.evaluate(Category.WCAGGuideline, webURL);
         wcagGuideline.forEach(t -> testRepository.save(t));
         return null;
     }
 
     @RequestMapping("/usability/evaluation/{category}")
-    public List<EvaluationResult> evaluateByCategory(@PathVariable("category") String category,
+    public List<EvaluationResult> evaluateByCategory(@PathVariable("category") Category category,
                                                      @RequestParam(value="url", defaultValue="http://www.etis.ee") String webURL) throws InterruptedException, ExecutionException {
-        if (category.equals("AllGuidelines")) {
+        if (category.equals(Category.AllGuidelines)) {
             ExecutorService executor = Executors.newFixedThreadPool(3);
 
             Callable<List<EvaluationResult>> WCAGGuideline = () -> {
-                return evaluatorService.evaluate("WCAGGuideline", webURL);
+                return evaluatorService.evaluate(Category.WCAGGuideline, webURL);
             };
 
             Callable<List<EvaluationResult>> UsabilityGuideline = () -> {
-                return evaluatorService.evaluate("UsabilityGuideline", webURL);
+                return evaluatorService.evaluate(Category.UsabilityGuideline, webURL);
             };
 
             Callable<List<EvaluationResult>> MobileUsabilityGuideline = () -> {
-                return evaluatorService.evaluate("MobileUsabilityGuideline", webURL);
+                return evaluatorService.evaluate(Category.MobileUsabilityGuideline, webURL);
             };
 
             List<Future<List<EvaluationResult>>> futureInsurerQuotes = executor.invokeAll(Arrays.asList(WCAGGuideline,UsabilityGuideline,MobileUsabilityGuideline));
@@ -223,7 +224,7 @@ public class UsabilityEvaluationController {
 
     @Transactional
     public void evaluate(String URL) throws ExecutionException, InterruptedException {
-        List<EvaluationResult> allGuidelines = evaluateByCategory("AllGuidelines", URL);
+        List<EvaluationResult> allGuidelines = evaluateByCategory(Category.AllGuidelines, URL);
 //        List<EvaluationResult> guidelines = evaluatorService.evaluate("WcagGuideline", "https://www.etis.ee/Portal/Projects/Index?searchType=detailed");
 //        allGuidelines.forEach(t -> testRepository.save(t));
     }

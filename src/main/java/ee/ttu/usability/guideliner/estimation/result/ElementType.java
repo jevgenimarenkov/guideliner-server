@@ -4,6 +4,7 @@ public enum ElementType {
 
 	// main element types
 	AREA,
+	ALTERNATIVE_TEXT,
 	PAGE, 
 	LINK, 
 	FORM,
@@ -25,5 +26,7 @@ public enum ElementType {
 	EMBED,
 	OBJECT,
 	HEADER,
-	RADIO
+	RADIO,
+	TAG,
+	TITLE,
 }

@@ -6,6 +6,7 @@ import ee.ttu.usability.guideliner.domain.element.link.*;
 import ee.ttu.usability.guideliner.domain.element.link.Button;
 import ee.ttu.usability.guideliner.domain.element.link.Frame;
 import ee.ttu.usability.guideliner.domain.element.link.Object;
+import ee.ttu.usability.guideliner.domain.guideline.Category;
 import ee.ttu.usability.guideliner.estimation.adaptor.*;
 import ee.ttu.usability.guideliner.estimation.result.Guideline;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
@@ -76,11 +77,11 @@ public class OntologyEvaluatorService {
 	}
 
 	private Screenshoter screenshoter = new Screenshoter();
-	public List<EvaluationResult>  evaluate(String category, String url) {
+	public List<EvaluationResult>  evaluate(Category category, String url) {
 		List<EvaluationResult> results = new ArrayList<>();
 
 		WebDriver driver = null;
-		if ("MobileUsabilityGuideline".equals(category)) {
+		if (Category.MobileUsabilityGuideline.equals(category)) {
 			driver = this.initializeForMobile();
 		} else {
 			driver = this.initialiseDriver();
@@ -104,7 +105,7 @@ public class OntologyEvaluatorService {
 		final AtomicBoolean ffff = new AtomicBoolean(false);
 		WebDriver finalDriver = driver;
 
-		OntologyRepository.reasoner.getSubClasses(ontologyRepository.loadClass(category))
+		OntologyRepository.reasoner.getSubClasses(ontologyRepository.loadClass(category.name()))
 				.entities()
 				.filter(c -> !c.getIRI().getShortForm().equals("Nothing"))
 				.forEach(c -> {

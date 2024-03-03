@@ -152,7 +152,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			Integer amountOfUnits = getAmountOfUnit(el.getText(), page.getUnit());			
 			 if (amountOfUnits > page.getContentLength()) {
 				 String description = "Amount of " + page.getUnit() + " was " + amountOfUnits;
-				 result.getFailedElements().add(prepareFailedElement("UI Page", "Home page", description, NO_IMAGE));
+				 result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "Home page", description, NO_IMAGE));
 					
 				 result.setElementType(ElementType.PAGE);
 				 result.setResult(ResultType.FAIL);
@@ -177,7 +177,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		if (!scrollY.equals(new Long(0)) && !scrollX.equals(new Long(0))) {
 			String description = "Both vertical and horizontal scroll exist on the page. Only one should exist.";
-			result.getFailedElements().add(prepareFailedElement("UI Page", "Web Page", description, NO_IMAGE));
+			result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "Web Page", description, NO_IMAGE));
 			result.setElementType(ElementType.PAGE);
 			result.setResult(ResultType.FAIL);
 			result.setDescription(description);
@@ -289,7 +289,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			String entireText = el.getText();
 			for (String element : page.getProhibitedWords().getValue().split(",")) {
 				if (entireText.contains(element)) {
-					 result.getFailedElements().add(prepareFailedElement("UI Page", "Whole page", "The word " + element + "is not allowed" , NO_IMAGE));
+					 result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "Whole page", "The word " + element + "is not allowed" , NO_IMAGE));
 					 result.setElementType(ElementType.PAGE);
 				}
 			}
@@ -346,7 +346,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 						finish = matcher.end() + 15;
 					}
 					String textWithMultipleSpaces = text.substring(start, finish);
-					result.getFailedElements().add(prepareFailedElement("UI Page text", textWithMultipleSpaces, "Text contains multiple spaces" , NO_IMAGE));
+					result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, textWithMultipleSpaces, "Text contains multiple spaces" , NO_IMAGE));
 				}
 			});
 			return setSuccessFlag(result);
@@ -606,7 +606,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			imgs.forEach(t -> {
 				String altText = t.getAttribute("alt");
 				if (exiustingIds.contains(altText)) {
-					result.getFailedElements().add(prepareFailedElement("Alternative text",
+					result.getFailedElements().add(prepareFailedElement(ElementType.ALTERNATIVE_TEXT,
 							t.getAttribute("outerHTML"), "Alternative text should be unique", NO_IMAGE));
 				} else {
 					exiustingIds.add(altText);
@@ -626,7 +626,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 			if (findElements.size() == 0) {
 				result.getFailedElements()
-						.add(prepareFailedElement("Html tag", "", "Html tag does not exist.", NO_IMAGE));
+						.add(prepareFailedElement(ElementType.TAG, "", "Html tag does not exist.", NO_IMAGE));
 				return setSuccessFlag(result);
 			}
 
@@ -635,7 +635,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 			if (!langElement.isPresent()) {
 				result.getFailedElements()
-						.add(prepareFailedElement("Lang attribute of HTML tag", "", "Lang is not defined", NO_IMAGE));
+						.add(prepareFailedElement(ElementType.TAG, "", "Lang is not defined", NO_IMAGE));
 			}
 			return setSuccessFlag(result);
 
@@ -656,7 +656,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 			if (null == link)
 				link = e.getAttribute("src");
 			if (driver.getCurrentUrl().equals(link.equals(page.getHref().getValue()))) {
-				result.getFailedElements().add(prepareFailedElement("UI Page", "",
+				result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "",
 						"Page contains link to itself.", NO_IMAGE));
 			}
 		}
@@ -672,11 +672,11 @@ public class UIPageAdaptor extends AbstractAdaptor {
 				WebElement viewportElement = driver.findElement(By.xpath("//meta[@name='viewport']"));
 				if (StringUtils.isNotEmpty(viewportElement.getText())) {
 					result.getFailedElements()
-							.add(prepareFailedElement(ElementType.PAGE.name(), "", "Viewport is empty.", NO_IMAGE));
+							.add(prepareFailedElement(ElementType.PAGE, "", "Viewport is empty.", NO_IMAGE));
 				}
 			} catch (NoSuchElementException ex) {
 				result.getFailedElements()
-						.add(prepareFailedElement(ElementType.PAGE.name(), "", "Viewport is not defined.", NO_IMAGE));
+						.add(prepareFailedElement(ElementType.PAGE, "", "Viewport is not defined.", NO_IMAGE));
 			}
 		}
 		return setSuccessFlag(result);
@@ -689,7 +689,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		if (driver.getPageSource().contains("embedSWF")) {
 			result.getFailedElements()
-					.add(prepareFailedElement(ElementType.PAGE.name(), "", "Flash is not allowed for mobile device..", NO_IMAGE));
+					.add(prepareFailedElement(ElementType.PAGE, "", "Flash is not allowed for mobile device..", NO_IMAGE));
 		}
 
 		return setSuccessFlag(result);
@@ -703,7 +703,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 		List<WebElement> findElements = driver.findElements(By.tagName("title"));
 		
 		if (findElements.size() == 0) {
-			result.getFailedElements().add(prepareFailedElement("Title tag", "", "Title tag does not exist.", NO_IMAGE));
+			result.getFailedElements().add(prepareFailedElement(ElementType.TITLE, "", "Title tag does not exist.", NO_IMAGE));
 			return setSuccessFlag(result);
 		}
 		
@@ -727,7 +727,7 @@ public class UIPageAdaptor extends AbstractAdaptor {
 
 		List<WebElement> input = getInputs(driver);
 		if (input.size() > page.getMaxNumberOfInputs()) {
-			result.getFailedElements().add(prepareFailedElement("UI Page", "", "The expected amount of inputs exceeded. Actual number: " + input.size() + " Expected number:" + page.getMaxNumberOfInputs(), NO_IMAGE));
+			result.getFailedElements().add(prepareFailedElement(ElementType.PAGE, "", "The expected amount of inputs exceeded. Actual number: " + input.size() + " Expected number:" + page.getMaxNumberOfInputs(), NO_IMAGE));
 		}
 
 		return setSuccessFlag(result);
