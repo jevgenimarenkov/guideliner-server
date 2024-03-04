@@ -40,6 +40,7 @@ import uk.ac.manchester.cs.owl.owlapi.OWLSubClassOfAxiomImpl;
 
 import java.awt.*;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -384,9 +385,7 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof TableHeader) {
 				try {
-					TableHeaderAdaptor adaptor = new TableHeaderAdaptor();
-					adaptor.setDriver(driver);
-					return adaptor.execute((TableHeader) guidelineElement);
+					return Execute(TableHeaderAdaptor.class, driver, guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
 				}
@@ -399,7 +398,16 @@ public class OntologyEvaluatorService {
 		}
 
 		throw new RuntimeException("Cannot find adaptor for " + guidelineElement.getClass());
-		//	driver.close();
+	}
+
+	public static <T extends AbstractAdaptor> EvaluationResult Execute(Class<T> clazz, WebDriver driver, UsabilityGuideline guidelineElement ) {
+		try {
+			var adaptor = clazz.getDeclaredConstructor().newInstance();
+			adaptor.setDriver(driver);
+			return adaptor.execute(guidelineElement);
+		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+			throw new RuntimeException("Could not instantiate the class", e);
+		}
 	}
 
 	public WebDriver initialiseDriver() {

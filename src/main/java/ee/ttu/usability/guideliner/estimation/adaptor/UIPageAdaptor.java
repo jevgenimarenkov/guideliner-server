@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 
 import ee.ttu.usability.guideliner.domain.attribute.*;
 import ee.ttu.usability.guideliner.domain.dataproperty.Unit;
+import ee.ttu.usability.guideliner.domain.element.UsabilityGuideline;
 import ee.ttu.usability.guideliner.domain.page.UIPage;
 import ee.ttu.usability.guideliner.estimation.result.ElementType;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
