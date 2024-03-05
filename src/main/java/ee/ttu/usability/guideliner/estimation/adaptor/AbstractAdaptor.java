@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-public abstract class AbstractAdaptor {
+public abstract class AbstractAdaptor<T extends UsabilityGuideline> {
 
 	protected Screenshoter screenshoter = new Screenshoter();
 
@@ -38,7 +38,7 @@ public abstract class AbstractAdaptor {
 	
 	protected Optional<BufferedImage> screenshot = Optional.empty();
 
-	public  abstract EvaluationResult execute(UsabilityGuideline applet);
+	public  abstract EvaluationResult execute(T applet) throws IOException;
 
 	protected Integer getAmountOfUnit(String string, Unit unit) {
 		if (string == null || unit == null) {

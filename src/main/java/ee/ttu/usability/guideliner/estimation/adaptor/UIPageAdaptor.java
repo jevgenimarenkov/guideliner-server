@@ -27,7 +27,7 @@ import static ee.ttu.usability.guideliner.service.impl.OntologyEvaluatorService.
 import static ee.ttu.usability.guideliner.service.impl.OntologyEvaluatorService.DEFAULT_WIDTH;
 
 @Slf4j
-public class UIPageAdaptor extends AbstractAdaptor {
+public class UIPageAdaptor extends AbstractAdaptor<UIPage> {
 
 	public EvaluationResult execute(UIPage page) throws IOException {
 		LocalDateTime startTime2 = LocalDateTime.now();
