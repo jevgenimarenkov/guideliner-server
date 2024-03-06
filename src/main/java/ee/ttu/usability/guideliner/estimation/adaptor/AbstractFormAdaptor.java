@@ -1,5 +1,6 @@
 package ee.ttu.usability.guideliner.estimation.adaptor;
 
+import ee.ttu.usability.guideliner.domain.element.UsabilityGuideline;
 import ee.ttu.usability.guideliner.estimation.result.ElementType;
 import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.estimation.result.ResultType;
@@ -7,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -113,4 +115,9 @@ public class AbstractFormAdaptor extends AbstractAdaptor {
         return setSuccessFlag(result);
     }
 
+    // TODO Remove
+    @Override
+    public EvaluationResult execute(UsabilityGuideline applet) throws IOException {
+        return null;
+    }
 }

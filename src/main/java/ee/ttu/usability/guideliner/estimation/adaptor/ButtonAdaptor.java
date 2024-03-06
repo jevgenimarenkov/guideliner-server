@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ButtonAdaptor extends AbstractAdaptor {
+public class ButtonAdaptor extends AbstractAdaptor<Button> {
 
 	public EvaluationResult execute(Button el) throws IOException {
 		if (el.getAlternativeText() != null) {

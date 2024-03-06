@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * Created by jevge on 21/07/2017.
  */
-public class InputAdaptor extends AbstractAdaptor {
+public class InputAdaptor extends AbstractAdaptor<Input> {
 
     public EvaluationResult execute(Input input) throws IOException {
         if (input.getColor() != null && input.getColor().getIsSame() != null && input.getIsSelected()) {

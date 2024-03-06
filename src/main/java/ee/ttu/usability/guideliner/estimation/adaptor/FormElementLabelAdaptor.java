@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class FormElementLabelAdaptor extends AbstractAdaptor {
+public class FormElementLabelAdaptor extends AbstractAdaptor<FormElementLabel> {
 
     public EvaluationResult execute(FormElementLabel label) throws IOException {
         if (label.getPositionType() != null) {

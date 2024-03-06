@@ -25,7 +25,7 @@ import ee.ttu.usability.guideliner.domain.element.link.Link;
 
 @Slf4j
 @Service("LinkAdaptor")
-public class LinkAdaptor extends AbstractAdaptor {
+public class LinkAdaptor extends AbstractAdaptor<Link> {
 
 	public EvaluationResult execute(Link link) throws IOException {
 		if (link.getContrast() != null && link.getContrast().getContrast() != null) {

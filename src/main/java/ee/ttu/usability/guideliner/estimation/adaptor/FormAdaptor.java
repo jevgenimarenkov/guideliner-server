@@ -18,7 +18,7 @@ import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.estimation.result.FailedElement;
 
 @Slf4j
-public class FormAdaptor extends AbstractAdaptor {
+public class FormAdaptor extends AbstractAdaptor<Form> {
 	
 	public EvaluationResult execute(Form form) throws IOException {
 		if (form.getLabel() != null) {

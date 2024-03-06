@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class FrameAdaptor extends AbstractAdaptor {
+public class FrameAdaptor extends AbstractAdaptor<Frame> {
 
     public EvaluationResult execute(Frame frame) throws IOException {
         if (frame.getTitle() != null && frame.getTitle().getIsValued() != null) {

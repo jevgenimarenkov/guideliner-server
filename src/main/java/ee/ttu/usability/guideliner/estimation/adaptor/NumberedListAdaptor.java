@@ -14,7 +14,7 @@ import ee.ttu.usability.guideliner.estimation.result.EvaluationResult;
 import ee.ttu.usability.guideliner.domain.element.link.NumberedList;
 
 @Slf4j
-public class NumberedListAdaptor extends AbstractAdaptor {
+public class NumberedListAdaptor extends AbstractAdaptor<NumberedList> {
 
 	public EvaluationResult execute(NumberedList element) throws IOException {
 		if (element.getContentLength()!= null) {

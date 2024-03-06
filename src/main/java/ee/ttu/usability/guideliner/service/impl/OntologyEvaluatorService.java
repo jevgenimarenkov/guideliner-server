@@ -333,9 +333,7 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof Select) {
 				try {
-					SelectAdaptor adaptor = new SelectAdaptor();
-					adaptor.setDriver(driver);
-					return adaptor.execute((Select) guidelineElement);
+					return Execute(SelectAdaptor.class, driver, (Select) guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
 				}
@@ -353,9 +351,7 @@ public class OntologyEvaluatorService {
 
 			if (guidelineElement instanceof Embed) {
 				try {
-					EmbedAdaptor adaptor = new EmbedAdaptor();
-					adaptor.setDriver(driver);
-					return adaptor.execute((Embed) guidelineElement);
+					return Execute(EmbedAdaptor.class, driver, (Embed) guidelineElement);
 				} catch (Exception ex) {
 					throw  ex;
 				}
